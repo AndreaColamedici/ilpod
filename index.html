@@ -48,8 +48,8 @@ nav .ctn{display:flex;justify-content:space-between;align-items:center}
 .hero-floats .f6{top:30%;right:15%;width:90px;animation-delay:-10s;animation-duration:24s}
 .hero-floats .f7{bottom:35%;right:25%;width:70px;animation-delay:-12s}
 .hero-floats .f8{top:60%;left:30%;width:110px;animation-delay:-3s;animation-duration:26s}
-.hero-canvas{position:absolute;inset:0;z-index:0}
-.hero-c{position:relative;z-index:1;max-width:800px}
+.hero-canvas{position:absolute;inset:0;z-index:0;opacity:.85}
+.hero-c{position:relative;z-index:1;max-width:1000px;width:90%}
 .hero-logo{font-family:var(--serif);font-size:clamp(5rem,14vw,12rem);font-weight:400;line-height:.85;letter-spacing:-.04em;margin-bottom:1rem;opacity:0;animation:fadeUp 1s .3s both}
 .hero-logo em{font-style:italic}
 .hero-sub{font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.8rem);font-style:italic;line-height:1.3;margin-bottom:2rem;opacity:0;animation:fadeUp 1s .5s both;color:var(--b2)}
@@ -181,7 +181,7 @@ section{padding:4.5rem 0}
 }
 
 /* ANIMATED LOGO */
-.hero-logo-svg{width:90%;max-width:800px;margin-bottom:1.5rem;opacity:0;animation:fadeIn .1s .2s both}
+.hero-logo-svg{width:100%;max-width:1000px;margin-bottom:2rem;opacity:0;animation:fadeIn .1s .2s both}
 .ilpod-logo{display:block;width:100%;height:auto}
 .logo-reveal-rect{animation:logoReveal 2s .3s cubic-bezier(.25,.1,.25,1) both}
 .logo-red{opacity:0;transform:scale(.7);animation:logoRedIn .8s 1.4s cubic-bezier(.34,1.56,.64,1) both}
@@ -189,33 +189,14 @@ section{padding:4.5rem 0}
 @keyframes logoRedIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
 
 
-/* ANIMATED MIC */
-.hero-mic{position:absolute;z-index:2;bottom:15%;right:8%;width:80px;opacity:0;animation:fadeIn 1s 2s both}
-.hero-mic svg{width:100%;height:auto}
-.mic-body{animation:micPulse 3s ease-in-out infinite}
-.mic-waves circle{animation:waveExpand 2s ease-out infinite;opacity:0}
-.mic-waves circle:nth-child(2){animation-delay:.5s}
-.mic-waves circle:nth-child(3){animation-delay:1s}
-@keyframes micPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-@keyframes waveExpand{0%{r:20;opacity:.6}100%{r:50;opacity:0}}
 
 /* EQUALIZER */
 .eq{display:flex;align-items:flex-end;gap:3px;height:40px;justify-content:center;margin-bottom:1rem}
-.eq-bar{width:4px;background:var(--y);border-radius:2px;animation:eqBounce 1.2s ease-in-out infinite}
-.eq-bar:nth-child(1){animation-delay:0s;height:60%}
-.eq-bar:nth-child(2){animation-delay:.15s;height:100%}
-.eq-bar:nth-child(3){animation-delay:.3s;height:40%}
-.eq-bar:nth-child(4){animation-delay:.45s;height:80%}
-.eq-bar:nth-child(5){animation-delay:.6s;height:50%}
-.eq-bar:nth-child(6){animation-delay:.2s;height:90%}
-.eq-bar:nth-child(7){animation-delay:.35s;height:30%}
-@keyframes eqBounce{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.3)}}
+.eq-bar{width:4px;background:var(--y);border-radius:2px;height:50%;transition:height .15s ease}
 
-/* SOUND LINE divider */
-.sound-divider{width:100%;height:60px;position:relative;overflow:hidden;opacity:.15}
-.sound-divider svg{width:100%;height:100%}
-.sound-wave-line{stroke-dasharray:1200;stroke-dashoffset:1200;animation:drawLine 3s ease forwards}
-@keyframes drawLine{to{stroke-dashoffset:0}}
+/* SOUND WAVE dividers — canvas-driven, interactive */
+.wave-divider{width:100%;height:120px;position:relative;opacity:.3;margin:-60px 0;z-index:2}
+.wave-divider canvas{width:100%;height:100%;display:block}
 
 /* PREMIO enhanced hover */
 .premio{position:relative;overflow:hidden}
@@ -224,10 +205,8 @@ section{padding:4.5rem 0}
 .premio-icon{font-size:2rem;margin-bottom:1rem;display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
 .premio:hover .premio-icon{transform:scale(1.2) rotate(-5deg)}
 
-/* FLOATING PARTICLES */
-.particles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.particle{position:absolute;border-radius:50%;animation:particleFloat linear infinite}
-@keyframes particleFloat{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
+/* PARTICLES — canvas driven */
+.particles-canvas{position:absolute;inset:0;pointer-events:none;z-index:0}
 
 /* GLOWING TEXT for section titles */
 .stit-glow{position:relative}
@@ -235,18 +214,6 @@ section{padding:4.5rem 0}
 .stit-glow em::after{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:2px;background:var(--y);transform:scaleX(0);transition:transform .8s cubic-bezier(.16,1,.3,1);transform-origin:left}
 .stit-glow.v em::after{transform:scaleX(1)}
 
-/* AUDIO PROGRESS bar in hero */
-.hero-audio-bar{width:60%;max-width:400px;height:3px;background:rgba(10,10,10,.1);border-radius:3px;margin:0 auto 2rem;overflow:hidden;opacity:0;animation:fadeIn 1s 1.8s both}
-.hero-audio-fill{height:100%;width:0;background:var(--b);border-radius:3px;animation:audioProgress 8s 2.5s ease-in-out infinite}
-@keyframes audioProgress{0%{width:0}50%{width:100%}50.1%{width:100%;opacity:1}55%{opacity:0}55.1%{width:0;opacity:0}60%{opacity:1;width:0}100%{width:0}}
-
-/* PLAY BUTTON pulse */
-.hero-play{width:50px;height:50px;border-radius:50%;background:var(--b);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;cursor:pointer;position:relative;opacity:0;animation:fadeUp 1s 1.5s both;transition:all .3s}
-.hero-play::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--b);opacity:.3;animation:playPulse 2s ease-out infinite}
-.hero-play::after{content:'';position:absolute;inset:-14px;border-radius:50%;border:1px solid var(--b);opacity:.15;animation:playPulse 2s .4s ease-out infinite}
-.hero-play svg{width:18px;height:18px;fill:var(--y);margin-left:2px}
-@keyframes playPulse{0%{transform:scale(1);opacity:.3}100%{transform:scale(1.4);opacity:0}}
-.hero-play:hover{transform:scale(1.1);box-shadow:0 5px 20px rgba(0,0,0,.15)}
 
 /* CRITERI section animated bg */
 .criteri{position:relative}
@@ -269,10 +236,55 @@ section{padding:4.5rem 0}
 .num-v::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--b);transition:width .8s cubic-bezier(.16,1,.3,1)}
 .num-v.counted::after{width:40px}
 
+/* 3D TILT on cards */
+.premio,.criterio,.super-card{transform-style:preserve-3d;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s}
+.premio:hover,.criterio:hover{box-shadow:0 15px 40px rgba(0,0,0,.08)}
+
 /* CONTATTI animated border */
 .cont-email{position:relative}
 .cont-email::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--y);transform:scaleX(0);transform-origin:right;transition:transform .6s cubic-bezier(.16,1,.3,1)}
 .cont-email:hover::before{transform:scaleX(1);transform-origin:left}
+
+/* ACADEMY */
+.academy{background:var(--w);position:relative;overflow:hidden}
+.academy-intro{font-size:1rem;line-height:1.85;color:var(--g7);font-weight:300;max-width:640px;margin-bottom:3rem}
+.academy-intro strong{font-weight:500;color:var(--b)}
+.academy-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g2);border-radius:14px;overflow:hidden;margin-bottom:3.5rem}
+.hl-card{background:var(--w);padding:2.5rem 2rem;transition:all .5s cubic-bezier(.16,1,.3,1)}
+.hl-card:hover{background:var(--y3)}
+.hl-icon{font-size:1.6rem;margin-bottom:1rem;display:block}
+.hl-title{font-family:var(--serif);font-size:1.2rem;margin-bottom:.5rem;line-height:1.2}
+.hl-desc{font-size:.85rem;line-height:1.7;color:var(--g7)}
+.academy-timeline{position:relative;padding-left:2.5rem;margin-bottom:3.5rem}
+.academy-timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--y),var(--yd),var(--b))}
+.tl-item{position:relative;margin-bottom:2.5rem}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-2.5rem;top:.35rem;width:16px;height:16px;border-radius:50%;background:var(--y);border:3px solid var(--w);box-shadow:0 0 0 2px var(--yd);z-index:1}
+.tl-item.tl-live::before{background:var(--b);box-shadow:0 0 0 2px var(--b),0 0 12px rgba(10,10,10,.3)}
+.tl-date{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--yd);margin-bottom:.3rem}
+.tl-title{font-family:var(--serif);font-size:1.15rem;margin-bottom:.3rem;line-height:1.2}
+.tl-desc{font-size:.85rem;line-height:1.6;color:var(--g7)}
+.academy-faculty{margin-bottom:3rem}
+.academy-faculty h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:1.5rem}
+.faculty-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.faculty-card{background:var(--y3);border-radius:10px;padding:1.8rem 1.5rem;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.faculty-card:hover{background:var(--y);transform:translateY(-3px)}
+.faculty-name{font-family:var(--serif);font-size:1.05rem;margin-bottom:.3rem}
+.faculty-role{font-size:.78rem;line-height:1.5;color:var(--g7)}
+.academy-cta{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:2.5rem;background:var(--y);border-radius:14px}
+.academy-cta-text{flex:1;min-width:250px}
+.academy-cta-text .cta-big{font-family:var(--serif);font-size:1.6rem;line-height:1.2;margin-bottom:.4rem}
+.academy-cta-text .cta-sub{font-size:.88rem;color:var(--b2)}
+.academy-cta a{display:inline-block;background:var(--b);color:var(--y);padding:.9rem 2.4rem;border-radius:6px;font-weight:500;font-size:.9rem;transition:all .3s}
+.academy-cta a:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.15)}
+
+@media(max-width:900px){
+.academy-highlights{grid-template-columns:1fr}
+.faculty-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+.faculty-grid{grid-template-columns:1fr}
+}
 
 /* RIBBON enhanced */
 .rib{position:relative}
@@ -289,6 +301,7 @@ section{padding:4.5rem 0}
 <ul class="nlinks" id="nl">
 <li><a href="#nuova">2026</a></li>
 <li><a href="#premi">I premi</a></li>
+<li><a href="#academy">Academy</a></li>
 <li><a href="#archivio">Archivio</a></li>
 <li><a href="#contatti" class="ncta">Contatti</a></li>
 </ul>
@@ -316,7 +329,7 @@ section{padding:4.5rem 0}
 <!-- Waveform 2 -->
 <svg class="f8" viewBox="0 0 160 50"><rect x="5" y="10" width="4" height="30" rx="2" fill="currentColor"/><rect x="15" y="5" width="4" height="40" rx="2" fill="currentColor"/><rect x="25" y="15" width="4" height="20" rx="2" fill="currentColor"/><rect x="35" y="2" width="4" height="46" rx="2" fill="currentColor"/><rect x="45" y="12" width="4" height="26" rx="2" fill="currentColor"/><rect x="55" y="8" width="4" height="34" rx="2" fill="currentColor"/><rect x="65" y="18" width="4" height="14" rx="2" fill="currentColor"/><rect x="75" y="5" width="4" height="40" rx="2" fill="currentColor"/><rect x="85" y="15" width="4" height="20" rx="2" fill="currentColor"/><rect x="95" y="10" width="4" height="30" rx="2" fill="currentColor"/><rect x="105" y="3" width="4" height="44" rx="2" fill="currentColor"/><rect x="115" y="18" width="4" height="14" rx="2" fill="currentColor"/><rect x="125" y="8" width="4" height="34" rx="2" fill="currentColor"/><rect x="135" y="12" width="4" height="26" rx="2" fill="currentColor"/><rect x="145" y="5" width="4" height="40" rx="2" fill="currentColor"/></svg>
 </div>
-<div class="particles" id="particles"></div>
+<canvas class="particles-canvas" id="pc"></canvas>
 
 <div class="hero-c">
 <div class="hero-logo-svg">
@@ -419,7 +432,7 @@ section{padding:4.5rem 0}
 <div class="ctn">
 <div class="slab rv">Comitato Scientifico</div>
 <div class="eq rv"><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div></div>
- di <em>selezione</em></h2>
+<h2 class="stit stit-glow rv">Criteri di <em>selezione</em></h2>
 <p class="sint rv" style="color:rgba(255,255,255,.5)">Il Comitato Scientifico seleziona i podcast sulla base di tre criteri, che costituiscono un orientamento di giudizio condiviso.</p>
 <div class="criteri-grid">
 <div class="criterio rv">
@@ -434,6 +447,41 @@ section{padding:4.5rem 0}
 <h3>Originalità</h3>
 <p>Il podcast propone qualcosa che non esisteva, o che esisteva in forma diversa. Può trattarsi di un formato nuovo, di un punto di vista inedito, di un modo di raccontare che sposta i confini del medium. Il Comitato valuta il contributo dell'opera all'evoluzione del linguaggio podcast.</p>
 </div>
+</div>
+</div>
+</section>
+
+<!-- ACADEMY -->
+<section class="academy" id="academy">
+<div class="ctn">
+<div class="slab rv">Formazione</div>
+<h2 class="stit stit-glow rv">Piacenza<br>Podcast <em>Academy</em></h2>
+<p class="academy-intro rv">Un percorso gratuito di sei mesi per ragazze e ragazzi tra i 14 e i 25 anni. Dall'ascolto critico alla produzione dal vivo: i partecipanti diventano la redazione culturale del <strong>Festival del Pensare Contemporaneo</strong>, e il loro lavoro viene presentato alla cerimonia degli Italian Podcast Awards.</p>
+
+<div class="academy-highlights rv">
+<div class="hl-card">
+<span class="hl-icon">🎧</span>
+<div class="hl-title">Dall'ascolto alla voce</div>
+<div class="hl-desc">Analisi critica dei formati audio, scrittura per il parlato, la voce come strumento espressivo e tecnico di registrazione.</div>
+</div>
+<div class="hl-card">
+<span class="hl-icon">🎛️</span>
+<div class="hl-title">Produzione e montaggio</div>
+<div class="hl-desc">Registrazione, editing, sound design. Dalle basi tecniche alla costruzione di un podcast collettivo, con ruoli editoriali definiti.</div>
+</div>
+<div class="hl-card">
+<span class="hl-icon">📡</span>
+<div class="hl-title">Copertura dal vivo</div>
+<div class="hl-desc">Giornalismo culturale in tempo reale durante il Festival. Interviste, reportage, racconto del contemporaneo attraverso l'audio.</div>
+</div>
+</div>
+
+<div class="academy-cta rv">
+<div class="academy-cta-text">
+<div class="cta-big">50 posti · Iscrizioni gratuite</div>
+<div class="cta-sub">Candidature aperte fino al 18 marzo 2026 · 14–25 anni</div>
+</div>
+<a href="https://piacenzapodcastacademy.it" target="_blank">Scopri di più →</a>
 </div>
 </div>
 </section>
@@ -597,7 +645,7 @@ section{padding:4.5rem 0}
 
 <footer><div class="ctn"><div class="foot">
 <p class="foot-c">© 2026 IlPod — Italian Podcast Awards · Un progetto Tlon</p>
-<div class="foot-l"><a href="/press">Press</a></div>
+<div class="foot-l"><a href="/privacy">Privacy</a><a href="/regolamento">Regolamento</a><a href="/press">Press</a></div>
 </div></div></footer>
 
 <script>
@@ -627,74 +675,221 @@ document.getElementById('y'+tab.dataset.year).classList.add('active');
 });
 });
 
-// Hero canvas — animated waveform lines
+// === GLOBAL STATE ===
+let mouse={x:innerWidth/2,y:innerHeight/2};
+let t=0;
+document.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});
+
+// === HERO CANVAS — living waveforms that react to mouse ===
 const cv=document.getElementById('hc'),cx=cv.getContext('2d');
 function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener('resize',rs);
-let t=0;
-function dr(){
+// smooth mouse for fluid deformation
+let smx=innerWidth/2, smy=innerHeight/2;
+function drawHero(){
 cx.clearRect(0,0,cv.width,cv.height);
-for(let i=0;i<8;i++){
+// lerp toward real mouse for smoothness
+smx+=(mouse.x-smx)*.06;
+smy+=(mouse.y-smy)*.06;
+for(let i=0;i<12;i++){
 cx.beginPath();
-cx.strokeStyle=`rgba(10,10,10,${.025+i*.004})`;
-cx.lineWidth=.8;
-const by=(cv.height/10)*(i+1);
-for(let x=0;x<cv.width;x+=3){
-const y=by+Math.sin(x*.002+t+i*.7)*(20+i*4)+Math.sin(x*.005+t*.6)*10+Math.cos(x*.001+t*1.2+i)*5;
+cx.strokeStyle=`rgba(10,10,10,${.022+i*.005})`;
+cx.lineWidth=.7+i*.12;
+const by=(cv.height/14)*(i+1);
+for(let x=0;x<cv.width;x+=2){
+// gaussian-like deformation from mouse
+const dx=x-smx;
+const dy=by-smy;
+const d2=dx*dx+dy*dy;
+const radius=220+i*25;
+const mouseForce=Math.exp(-d2/(radius*radius*2))*90*(1+i*.12);
+// organic base
+const base=Math.sin(x*.002+t+i*.7)*(18+i*4)
++Math.sin(x*.005+t*.8)*10
++Math.cos(x*.001+t*1.2+i)*5
++Math.sin(x*.003-t*.4+i*1.5)*7;
+// push away from cursor
+const pushDir=dy>0?-1:1;
+const y=by+base+mouseForce*pushDir;
 x===0?cx.moveTo(x,y):cx.lineTo(x,y);
 }
 cx.stroke();
 }
-t+=.005;requestAnimationFrame(dr);
-}dr();
+t+=.01;
+requestAnimationFrame(drawHero);
+}drawHero();
 
-// Particles
+// === PARTICLES — canvas-based, mouse-reactive ===
 (function(){
-const pc=document.getElementById('particles');
+const pc=document.getElementById('pc');
 if(!pc)return;
-const colors=['rgba(10,10,10,.06)','rgba(10,10,10,.04)','rgba(212,160,23,.08)','rgba(242,199,68,.06)'];
-for(let i=0;i<30;i++){
-const p=document.createElement('div');
-p.className='particle';
-const s=Math.random()*4+2;
-p.style.cssText=`width:${s}px;height:${s}px;background:${colors[i%4]};left:${Math.random()*100}%;animation-duration:${Math.random()*15+10}s;animation-delay:${Math.random()*10}s`;
-pc.appendChild(p);
+const px=pc.getContext('2d');
+function rp(){pc.width=pc.parentElement.offsetWidth;pc.height=pc.parentElement.offsetHeight}
+rp();addEventListener('resize',rp);
+const pts=[];
+for(let i=0;i<50;i++){
+pts.push({
+x:Math.random()*2000, y:Math.random()*2000,
+vx:(Math.random()-.5)*.3, vy:-Math.random()*.4-.1,
+s:Math.random()*3+1,
+o:Math.random()*.08+.02,
+col:i%3===0?'212,160,23':'10,10,10'
+});
 }
+function drawParts(){
+px.clearRect(0,0,pc.width,pc.height);
+const heroRect=pc.getBoundingClientRect();
+const lx=mouse.x-heroRect.left, ly=mouse.y-heroRect.top;
+pts.forEach(p=>{
+// mouse repulsion
+const dx=p.x-lx, dy=p.y-ly;
+const d=Math.sqrt(dx*dx+dy*dy);
+if(d<150){
+const f=(150-d)/150*.5;
+p.vx+=dx/d*f;
+p.vy+=dy/d*f;
+}
+p.vx*=.99;p.vy*=.99;
+p.x+=p.vx;p.y+=p.vy;
+if(p.y<-10){p.y=pc.height+10;p.x=Math.random()*pc.width}
+if(p.x<-10)p.x=pc.width+10;
+if(p.x>pc.width+10)p.x=-10;
+px.beginPath();
+px.arc(p.x,p.y,p.s,0,Math.PI*2);
+px.fillStyle=`rgba(${p.col},${p.o})`;
+px.fill();
+});
+// connections
+for(let i=0;i<pts.length;i++){
+for(let j=i+1;j<pts.length;j++){
+const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+const d=Math.sqrt(dx*dx+dy*dy);
+if(d<120){
+px.beginPath();
+px.moveTo(pts[i].x,pts[i].y);
+px.lineTo(pts[j].x,pts[j].y);
+px.strokeStyle=`rgba(10,10,10,${.02*(1-d/120)})`;
+px.lineWidth=.5;
+px.stroke();
+}
+}
+}
+requestAnimationFrame(drawParts);
+}drawParts();
 })();
 
-// Stit glow on reveal
+
+// === WAVE DIVIDERS — large, reactive to mouse, between sections ===
+const waveDividers=[];
+document.querySelectorAll('section').forEach((sec,i)=>{
+if(i===0)return;
+const div=document.createElement('div');
+div.className='wave-divider';
+const c=document.createElement('canvas');
+div.appendChild(c);
+sec.style.position='relative';
+sec.insertBefore(div,sec.firstChild);
+const ctx=c.getContext('2d');
+const seed=Math.random()*100;
+const speed=.4+Math.random()*.5;
+const amp=15+Math.random()*12;
+const freq=.006+Math.random()*.003;
+const nWaves=3+Math.floor(Math.random()*3); // 3-5 waves per divider
+function resize(){c.width=c.parentElement.offsetWidth;c.height=120}
+resize();addEventListener('resize',resize);
+waveDividers.push({c,ctx,seed,speed,amp,freq,nWaves});
+});
+// single rAF loop for all dividers
+function drawAllDividers(){
+waveDividers.forEach(({c,ctx,seed,speed,amp,freq,nWaves})=>{
+ctx.clearRect(0,0,c.width,c.height);
+const rect=c.getBoundingClientRect();
+// mouse position relative to this canvas
+const mx=mouse.x;
+const my=mouse.y-rect.top;
+const mouseInRange=my>-150&&my<rect.height+150;
+for(let w=0;w<nWaves;w++){
+ctx.beginPath();
+const wOffset=w*1.7+seed;
+const wSpeed=speed*(1+w*.2);
+const wAmp=amp*(1-w*.15);
+const wFreq=freq*(1+w*.3);
+const alpha=.6-w*.12;
+ctx.strokeStyle=`rgba(10,10,10,${alpha})`;
+ctx.lineWidth=1.8-w*.3;
+for(let x=0;x<c.width;x+=2){
+// base wave
+let y=60
++Math.sin(x*wFreq+t*wSpeed+wOffset)*wAmp
++Math.sin(x*wFreq*2.1+t*wSpeed*1.4+wOffset)*wAmp*.35
++Math.cos(x*wFreq*.6-t*wSpeed*.7+wOffset)*wAmp*.25;
+// mouse deformation — gaussian push
+if(mouseInRange){
+const dx=x-mx;
+const dy=y-my;
+const d2=dx*dx+dy*dy;
+const radius=180;
+const force=Math.exp(-d2/(radius*radius*2))*45;
+const pushDir=dy>0?1:-1;
+y+=force*pushDir;
+}
+x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+}
+ctx.stroke();
+}
+});
+requestAnimationFrame(drawAllDividers);
+}drawAllDividers();
+
+// === 3D TILT on cards ===
+document.querySelectorAll('.premio,.criterio,.super-card').forEach(card=>{
+card.addEventListener('mousemove',e=>{
+const r=card.getBoundingClientRect();
+const x=(e.clientX-r.left)/r.width-.5;
+const y=(e.clientY-r.top)/r.height-.5;
+card.style.transform=`perspective(600px) rotateY(${x*8}deg) rotateX(${-y*8}deg) scale(1.02)`;
+});
+card.addEventListener('mouseleave',()=>{
+card.style.transform='perspective(600px) rotateY(0) rotateX(0) scale(1)';
+});
+});
+
+// === PARALLAX on hero floats — deeper, mouse-reactive ===
+let rafId;
+function heroParallax(){
+const sy=scrollY;
+document.querySelectorAll('.hero-floats svg').forEach((s,i)=>{
+const mx=(mouse.x/innerWidth-.5)*10*(i+1);
+const my=(mouse.y/innerHeight-.5)*5*(i+1);
+s.style.transform=`translate(${mx*.3}px,${sy*(0.02+i*0.01)+my*.2}px) rotate(${Math.sin(t+i)*2}deg)`;
+});
+rafId=requestAnimationFrame(heroParallax);
+}heroParallax();
+
+// === STIT GLOW on reveal ===
 document.querySelectorAll('.stit-glow').forEach(el=>{
 const o2=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');o2.unobserve(x.target)}}),{threshold:.3});
 o2.observe(el);
 });
 
-// Num underline after count
+// === NUM underline after count ===
 document.querySelectorAll('.num-v').forEach(el=>{
 const o3=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('counted'),1600);o3.unobserve(x.target)}}),{threshold:.5});
 o3.observe(el);
 });
 
-// Sound dividers - inject on scroll
-document.querySelectorAll('section').forEach((sec,i)=>{
-if(i===0)return;
-const sd=document.createElement('div');
-sd.className='sound-divider';
-sd.innerHTML='<svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="sound-wave-line" d="M0 30'+Array.from({length:24},(_,j)=>`Q${j*50+25} ${Math.random()>0.5?10:50} ${(j+1)*50} 30`).join('')+'" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
-sec.style.position='relative';
-sec.insertBefore(sd,sec.firstChild);
+// === EQUALIZER bars — randomized heights via JS ===
+(function(){
+const bars=document.querySelectorAll('.eq-bar');
+if(!bars.length)return;
+function animEq(){
+bars.forEach(b=>{
+const h=20+Math.random()*80;
+b.style.height=h+'%';
+b.style.transition='height .15s ease';
 });
-
-// Parallax on hero floats
-let rafId;
-window.addEventListener('scroll',()=>{
-if(rafId)return;
-rafId=requestAnimationFrame(()=>{
-const sy=scrollY;
-document.querySelectorAll('.hero-floats svg').forEach((s,i)=>{
-s.style.transform=`translateY(${sy*(0.02+i*0.008)}px)`;
-});
-rafId=null;
-});
-});
+setTimeout(animEq,150);
+}animEq();
+})();
 
 </script>
 </body>
