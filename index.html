@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IlPod — Italian Podcast Awards</title>
+<title>IlPod - Italian Podcast Awards</title>
 <meta name="description" content="Gli Italian Podcast Awards. La piattaforma culturale dedicata al podcasting italiano. Piacenza, 23 settembre 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +71,19 @@ section{padding:6rem 0}
 .stit{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.08;letter-spacing:-.02em;margin-bottom:1.2rem}
 .stit em{font-style:italic;color:var(--yd)}
 .sint{font-size:1rem;line-height:1.8;color:var(--g7);max-width:600px;font-weight:300}
+
+/* TAGLINE BANNER */
+.tagline{background:var(--y3);padding:3.5rem 0;text-align:center;position:relative;overflow:hidden}
+.tagline h2{font-family:var(--serif);font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:400;font-style:italic;line-height:1.2;letter-spacing:-.01em;color:var(--b)}
+
+/* MANIFESTO */
+.manifesto{background:var(--b);position:relative;overflow:hidden;padding:7rem 0}
+.manifesto-canvas{position:absolute;inset:0;pointer-events:none;z-index:0}
+.manifesto .ctn{position:relative;z-index:1}
+.manifesto-text{max-width:720px;margin:0 auto;text-align:center}
+.manifesto-text p{font-family:var(--serif);font-size:clamp(1.05rem,1.8vw,1.25rem);line-height:1.85;color:rgba(255,255,255,.65);font-weight:400;margin-bottom:1.5rem}
+.manifesto-text p:last-child{margin-bottom:0}
+.manifesto-text strong{color:var(--y);font-weight:400}
 
 /* NUOVA EDIZIONE */
 .nuova{background:var(--w)}
@@ -194,7 +207,7 @@ section{padding:4.5rem 0}
 .eq{display:flex;align-items:flex-end;gap:3px;height:40px;justify-content:center;margin-bottom:1rem}
 .eq-bar{width:4px;background:var(--y);border-radius:2px;height:50%;transition:height .15s ease}
 
-/* SOUND WAVE dividers — canvas-driven, interactive */
+/* SOUND WAVE dividers - canvas-driven, interactive */
 .wave-divider{width:100%;height:120px;position:relative;opacity:.3;margin:-60px 0;z-index:2}
 .wave-divider canvas{width:100%;height:100%;display:block}
 
@@ -205,7 +218,7 @@ section{padding:4.5rem 0}
 .premio-icon{font-size:2rem;margin-bottom:1rem;display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
 .premio:hover .premio-icon{transform:scale(1.2) rotate(-5deg)}
 
-/* PARTICLES — canvas driven */
+/* PARTICLES - canvas driven */
 .particles-canvas{position:absolute;inset:0;pointer-events:none;z-index:0}
 
 /* GLOWING TEXT for section titles */
@@ -368,6 +381,24 @@ section{padding:4.5rem 0}
 <span class="rib-i"><span class="rib-d"></span>Tlon</span>
 </div></div>
 
+<!-- TAGLINE -->
+<div class="tagline rv">
+<div class="ctn">
+<h2>Il premio per i migliori podcast italiani</h2>
+</div>
+</div>
+
+<!-- MANIFESTO -->
+<div class="manifesto">
+<canvas class="manifesto-canvas" id="mc"></canvas>
+<div class="ctn">
+<div class="manifesto-text rv">
+<p>Il mondo del podcasting è un <strong>motore culturale</strong> dal potenziale enorme. Creando i primi premi per i migliori podcast italiani, giunti alla quinta edizione, abbiamo voluto mettere in luce i tanti progetti di qualità che sono fioriti negli anni, e rafforzare la comunità di chi ascolta i podcast ogni giorno.</p>
+<p>Siamo convinti sia arrivato il momento di <strong>celebrare i contenuti più interessanti</strong> per valorizzare e contribuire a far crescere questo medium. Per questo vogliamo realizzare un evento di premiazione che sia il più possibile condiviso e partecipato, pensato intorno ai podcaster e alla <strong>community di ascoltatori e ascoltatrici</strong>.</p>
+</div>
+</div>
+</div>
+
 <!-- NUOVA EDIZIONE -->
 <section class="nuova" id="nuova">
 <div class="ctn">
@@ -378,13 +409,13 @@ section{padding:4.5rem 0}
 <p class="sint" style="max-width:none">Gli Italian Podcast Awards entrano nel 2026 in una nuova fase della loro storia.</p>
 <div class="nuova-text" style="margin-top:1.5rem">
 <p>Giunto alla quinta edizione, IlPod compie un passaggio di fase: <strong>non ci saranno più le autocandidature</strong>, e la selezione sarà affidata a un <strong>Comitato Scientifico</strong>, che ogni anno individuerà i podcast che sono stati capaci di segnare l'immaginario e il dibattito pubblico.</p>
-<p>Il Comitato Scientifico sarà composto da figure di riconosciuta autorevolezza nel mondo del podcasting e della cultura. Il Comitato avrà il compito di esplorare il panorama della produzione italiana — incluse le produzioni indipendenti, anche al di fuori dei circuiti di maggiore visibilità — e di individuare ogni anno una lista di podcast di valore.</p>
+<p>Il Comitato Scientifico sarà composto da figure di riconosciuta autorevolezza nel mondo del podcasting e della cultura. Il Comitato avrà il compito di esplorare il panorama della produzione italiana - incluse le produzioni indipendenti, anche al di fuori dei circuiti di maggiore visibilità - e di individuare ogni anno una lista di podcast di valore.</p>
 </div>
 </div>
 <div class="rv d1">
 <div class="nuova-quote">Il valore di un podcast non dipende dalla visibilità, dalla forza promozionale o dalla capacità di autocandidatura, ma dall'impatto reale delle opere su chi le ascolta.</div>
 <div class="nuova-text">
-<p>I premi saranno soltanto quattro: <strong>Podcast dell'Anno</strong>, <strong>La storia del podcast</strong>, <strong>Premio della Podcast Academy</strong> e <strong>Podcast Indie dell'Anno</strong>. Tutti i titoli saranno selezionati dal Comitato Scientifico.</p>
+<p>I premi saranno soltanto quattro: <strong>Podcast dell'Anno</strong>, <strong>La storia del podcast</strong>, <strong>Premio della Podcast Academy</strong> e <strong>Podcast Indie dell'Anno</strong>.</p>
 <p>IlPod sceglie di premiare meno categorie per restituire più profondità ai riconoscimenti assegnati. Il premio si configura come uno strumento di lettura del presente, capace di indicare traiettorie culturali. Gli Italian Podcast Awards diventano così una <strong>piattaforma culturale stabile</strong>, orientata alla qualità, alla formazione e alla costruzione di un canone vivo del podcasting italiano.</p>
 </div>
 </div>
@@ -402,13 +433,13 @@ section{padding:4.5rem 0}
 <div class="premio-n">01</div>
 <div class="premio-icon">🎙️</div>
 <div class="premio-t">Podcast dell'Anno</div>
-<div class="premio-d">Scelto dal Comitato Scientifico. Il podcast che ha saputo segnare l'immaginario e il dibattito pubblico nell'anno.</div>
+<div class="premio-d">Il podcast che ha saputo segnare l'immaginario e il dibattito pubblico nell'anno.</div>
 </div>
 <div class="premio">
 <div class="premio-n">02</div>
 <div class="premio-icon">📖</div>
 <div class="premio-t">La storia del podcast</div>
-<div class="premio-d">Scelto dal Comitato Scientifico. Il podcast che ha saputo costruire nel tempo un percorso autoriale rilevante e duraturo.</div>
+<div class="premio-d">Il podcast che ha saputo costruire nel tempo un percorso autoriale rilevante e duraturo.</div>
 </div>
 <div class="premio">
 <div class="premio-n">03</div>
@@ -420,7 +451,7 @@ section{padding:4.5rem 0}
 <div class="premio-n">04</div>
 <div class="premio-icon">⚡</div>
 <div class="premio-t">Podcast Indie dell'Anno</div>
-<div class="premio-d">Scelto dal Comitato Scientifico. Il miglior podcast indipendente, al di fuori dei circuiti di maggiore visibilità.</div>
+<div class="premio-d">Il miglior podcast indipendente, al di fuori dei circuiti di maggiore visibilità.</div>
 </div>
 </div>
 </div>
@@ -432,7 +463,7 @@ section{padding:4.5rem 0}
 <div class="ctn">
 <div class="slab rv">Comitato Scientifico</div>
 <div class="eq rv"><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div></div>
-<h2 class="stit stit-glow rv">Criteri di <em>selezione</em></h2>
+<h2 class="stit stit-glow rv">Criteri di <em>selezione</em></h2>
 <p class="sint rv" style="color:rgba(255,255,255,.5)">Il Comitato Scientifico seleziona i podcast sulla base di tre criteri, che costituiscono un orientamento di giudizio condiviso.</p>
 <div class="criteri-grid">
 <div class="criterio rv">
@@ -504,17 +535,17 @@ section{padding:4.5rem 0}
 <div class="super-row">
 <div class="super-card"><div class="sc-lab">Podcast dell'Anno</div><div class="sc-tit">Borena / La terra senza pioggia</div><div class="sc-aut">Valerio Nicolosi · LifeGate e Cesvi</div></div>
 <div class="super-card"><div class="sc-lab">Podcast Indie dell'Anno</div><div class="sc-tit">Gianni</div><div class="sc-aut">Caroline Baglioni e Michelangelo Bellani · Baby Hurricane</div></div>
-<div class="super-card"><div class="sc-lab">Premio del Pubblico</div><div class="sc-tit">E poi il silenzio — Il disastro di Rigopiano</div><div class="sc-aut">Pablo Trincia · Sky Italia, Chora Media</div></div>
+<div class="super-card"><div class="sc-lab">Premio del Pubblico</div><div class="sc-tit">E poi il silenzio - Il disastro di Rigopiano</div><div class="sc-aut">Pablo Trincia · Sky Italia, Chora Media</div></div>
 <div class="super-card"><div class="sc-lab">Premio Piacenza</div><div class="sc-tit">Provincia Thriller</div><div class="sc-aut">Nicoletta Marenghi · Libertà</div></div>
 <div class="super-card"><div class="sc-lab">Premio Storia del Podcast</div><div class="sc-tit">La piena. Il meccanico dei narcos</div><div class="sc-aut">Matteo Caccia e Mauro Pescio · Audible</div></div>
 </div>
 <div class="cat-grid">
-<div class="cat-item"><div class="cat-name">Benessere</div><div class="cat-pod">Avanti Veloce — Viaggio nell'ADHD</div><div class="cat-aut">Gianpiero Kesten</div></div>
+<div class="cat-item"><div class="cat-name">Benessere</div><div class="cat-pod">Avanti Veloce - Viaggio nell'ADHD</div><div class="cat-aut">Gianpiero Kesten</div></div>
 <div class="cat-item"><div class="cat-name">Business</div><div class="cat-pod">[Segreta]</div><div class="cat-aut">Federica Manzitti</div></div>
 <div class="cat-item"><div class="cat-name">Comedy</div><div class="cat-pod">Libri Brutti Podcast</div><div class="cat-aut">Auroro Borealo e altri</div></div>
 <div class="cat-item"><div class="cat-name">Cultura</div><div class="cat-pod">La Grande Famiglia</div><div class="cat-aut">Cristiano Barducci</div></div>
 <div class="cat-item"><div class="cat-name">Diversity</div><div class="cat-pod">Come una Marea</div><div class="cat-aut">Francesca Zanni ed Enrico Bergianti</div></div>
-<div class="cat-item"><div class="cat-name">Documentario</div><div class="cat-pod">E poi il silenzio — Il disastro di Rigopiano</div><div class="cat-aut">Pablo Trincia</div></div>
+<div class="cat-item"><div class="cat-name">Documentario</div><div class="cat-pod">E poi il silenzio - Il disastro di Rigopiano</div><div class="cat-aut">Pablo Trincia</div></div>
 <div class="cat-item"><div class="cat-name">Indie · Informazione</div><div class="cat-pod">10 e 25</div><div class="cat-aut">Gabriele Cruciata e Dario De Santis</div></div>
 <div class="cat-item"><div class="cat-name">Indie · Intrattenimento</div><div class="cat-pod">Libri Brutti Podcast</div><div class="cat-aut">Auroro Borealo e altri</div></div>
 <div class="cat-item"><div class="cat-name">Indie · Narrazione</div><div class="cat-pod">Gianni</div><div class="cat-aut">Caroline Baglioni e Michelangelo Bellani</div></div>
@@ -532,7 +563,7 @@ section{padding:4.5rem 0}
 <div class="year-header"><h3>III edizione · Piacenza · 7 luglio 2024</h3><p>18 categorie · Direzione artistica: Fabio Ragazzo · Prima edizione a Piacenza</p></div>
 <div class="super-row">
 <div class="super-card"><div class="sc-lab">Podcast dell'Anno</div><div class="sc-tit">Comprami</div><div class="sc-aut">Daniele Vaschi e Andrea Franceschi · Il Sole 24 Ore</div></div>
-<div class="super-card"><div class="sc-lab">Podcast Indie dell'Anno</div><div class="sc-tit">Troubles — Una storia irlandese</div><div class="sc-aut">Samuele Sciarrillo</div></div>
+<div class="super-card"><div class="sc-lab">Podcast Indie dell'Anno</div><div class="sc-tit">Troubles - Una storia irlandese</div><div class="sc-aut">Samuele Sciarrillo</div></div>
 <div class="super-card"><div class="sc-lab">Premio del Pubblico Amazon Music</div><div class="sc-tit">Racconti da Gaza</div><div class="sc-aut">Valerio Nicolosi</div></div>
 <div class="super-card"><div class="sc-lab">Premio Piacenza</div><div class="sc-tit">Wild Baricco / Cineastri</div><div class="sc-aut">Baricco e Caccia / Fartade e Perri</div></div>
 </div>
@@ -542,13 +573,13 @@ section{padding:4.5rem 0}
 <div class="cat-item"><div class="cat-name">Comedy</div><div class="cat-pod">Scusa il vocale lungo</div><div class="cat-aut">Maniaci, d'Amore, Aricò · Storytel</div></div>
 <div class="cat-item"><div class="cat-name">Cultura</div><div class="cat-pod">L'invasione</div><div class="cat-aut">Luca Misculin e Riccardo Ginevra · Il Post</div></div>
 <div class="cat-item"><div class="cat-name">Diversity</div><div class="cat-pod">Se domani non torno / Milano è il diavolo</div><div class="cat-aut">Silvia Boccardi / Federica Capozzi</div></div>
-<div class="cat-item"><div class="cat-name">Documentario</div><div class="cat-pod">Troubles — Una storia irlandese</div><div class="cat-aut">Samuele Sciarrillo</div></div>
+<div class="cat-item"><div class="cat-name">Documentario</div><div class="cat-pod">Troubles - Una storia irlandese</div><div class="cat-aut">Samuele Sciarrillo</div></div>
 <div class="cat-item"><div class="cat-name">Green</div><div class="cat-pod">Ghiaccio sottile</div><div class="cat-aut">Pavolini e Sapienza · RaiPlay Sound</div></div>
 <div class="cat-item"><div class="cat-name">Host</div><div class="cat-pod">Chiedilo a Barbero</div><div class="cat-aut">Alessandro Barbero · Chora Media</div></div>
 <div class="cat-item"><div class="cat-name">News</div><div class="cat-pod">Racconti da Gaza</div><div class="cat-aut">Valerio Nicolosi</div></div>
 <div class="cat-item"><div class="cat-name">Indie · Informazione</div><div class="cat-pod">Racconti da Gaza</div><div class="cat-aut">Valerio Nicolosi</div></div>
 <div class="cat-item"><div class="cat-name">Indie · Intrattenimento</div><div class="cat-pod">Brutto, un podcast bello</div><div class="cat-aut">Longoni, Poli e Salmetti</div></div>
-<div class="cat-item"><div class="cat-name">Indie · Narrazione</div><div class="cat-pod">Troubles — Una storia irlandese</div><div class="cat-aut">Samuele Sciarrillo</div></div>
+<div class="cat-item"><div class="cat-name">Indie · Narrazione</div><div class="cat-pod">Troubles - Una storia irlandese</div><div class="cat-aut">Samuele Sciarrillo</div></div>
 </div>
 </div>
 
@@ -635,7 +666,7 @@ section{padding:4.5rem 0}
 </div>
 <div class="cont-r rv d1">
 <h3>IlPod è un progetto Tlon</h3>
-<p>Fondato da Maura Gancitano, Andrea Colamedici e Fabio Ragazzo, e con la direzione artistica di Rossella Pivanti. Un progetto culturale promosso dal Comune di Piacenza e dalla Fondazione di Piacenza e Vigevano, realizzato da Fondazione Teatri di Piacenza.</p>
+<p>Fondato da Andrea Colamedici, Fabio Ragazzo e Maura Gancitano. Un progetto culturale promosso dal Comune di Piacenza e dalla Fondazione di Piacenza e Vigevano, realizzato da Fondazione Teatri di Piacenza.</p>
 <h3>Dove</h3>
 <p>Piacenza · In dialogo con il Festival del Pensare Contemporaneo</p>
 </div>
@@ -644,7 +675,7 @@ section{padding:4.5rem 0}
 </section>
 
 <footer><div class="ctn"><div class="foot">
-<p class="foot-c">© 2026 IlPod — Italian Podcast Awards · Un progetto Tlon</p>
+<p class="foot-c">© 2026 IlPod - Italian Podcast Awards · Un progetto Tlon</p>
 <div class="foot-l"><a href="/privacy">Privacy</a><a href="/regolamento">Regolamento</a><a href="/press">Press</a></div>
 </div></div></footer>
 
@@ -680,7 +711,7 @@ let mouse={x:innerWidth/2,y:innerHeight/2};
 let t=0;
 document.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});
 
-// === HERO CANVAS — living waveforms that react to mouse ===
+// === HERO CANVAS - living waveforms that react to mouse ===
 const cv=document.getElementById('hc'),cx=cv.getContext('2d');
 function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener('resize',rs);
 // smooth mouse for fluid deformation
@@ -718,7 +749,7 @@ t+=.01;
 requestAnimationFrame(drawHero);
 }drawHero();
 
-// === PARTICLES — canvas-based, mouse-reactive ===
+// === PARTICLES - canvas-based, mouse-reactive ===
 (function(){
 const pc=document.getElementById('pc');
 if(!pc)return;
@@ -777,8 +808,67 @@ requestAnimationFrame(drawParts);
 }drawParts();
 })();
 
+// === MANIFESTO CANVAS — animated sound waves behind text ===
+(function(){
+const mc=document.getElementById('mc');
+if(!mc)return;
+const mx=mc.getContext('2d');
+function rm(){mc.width=mc.parentElement.offsetWidth;mc.height=mc.parentElement.offsetHeight}
+rm();addEventListener('resize',rm);
+const waves=[];
+for(let i=0;i<8;i++){
+waves.push({
+freq:.003+Math.random()*.004,
+amp:20+Math.random()*30,
+speed:.3+Math.random()*.6,
+phase:Math.random()*Math.PI*2,
+y:.1+Math.random()*.8,
+alpha:.04+Math.random()*.06,
+width:1+Math.random()*1.5
+});
+}
+// floating particles
+const dots=[];
+for(let i=0;i<30;i++){
+dots.push({
+x:Math.random()*2000,y:Math.random()*1000,
+vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15,
+r:1+Math.random()*2,
+alpha:.03+Math.random()*.05
+});
+}
+function drawManifesto(){
+mx.clearRect(0,0,mc.width,mc.height);
+// waves
+waves.forEach(w=>{
+mx.beginPath();
+mx.strokeStyle=`rgba(242,199,68,${w.alpha})`;
+mx.lineWidth=w.width;
+const baseY=mc.height*w.y;
+for(let x=0;x<mc.width;x+=3){
+const y=baseY
++Math.sin(x*w.freq+t*w.speed+w.phase)*w.amp
++Math.sin(x*w.freq*2.3+t*w.speed*1.5)*w.amp*.3
++Math.cos(x*w.freq*.5-t*w.speed*.8+w.phase)*w.amp*.2;
+x===0?mx.moveTo(x,y):mx.lineTo(x,y);
+}
+mx.stroke();
+});
+// dots
+dots.forEach(d=>{
+d.x+=d.vx;d.y+=d.vy;
+if(d.x<0)d.x=mc.width;if(d.x>mc.width)d.x=0;
+if(d.y<0)d.y=mc.height;if(d.y>mc.height)d.y=0;
+mx.beginPath();
+mx.arc(d.x,d.y,d.r,0,Math.PI*2);
+mx.fillStyle=`rgba(242,199,68,${d.alpha})`;
+mx.fill();
+});
+requestAnimationFrame(drawManifesto);
+}drawManifesto();
+})();
 
-// === WAVE DIVIDERS — large, reactive to mouse, between sections ===
+// === WAVE DIVIDERS - large, reactive to mouse, between sections ===
 const waveDividers=[];
 document.querySelectorAll('section').forEach((sec,i)=>{
 if(i===0)return;
@@ -822,7 +912,7 @@ let y=60
 +Math.sin(x*wFreq+t*wSpeed+wOffset)*wAmp
 +Math.sin(x*wFreq*2.1+t*wSpeed*1.4+wOffset)*wAmp*.35
 +Math.cos(x*wFreq*.6-t*wSpeed*.7+wOffset)*wAmp*.25;
-// mouse deformation — gaussian push
+// mouse deformation - gaussian push
 if(mouseInRange){
 const dx=x-mx;
 const dy=y-my;
@@ -853,7 +943,7 @@ card.style.transform='perspective(600px) rotateY(0) rotateX(0) scale(1)';
 });
 });
 
-// === PARALLAX on hero floats — deeper, mouse-reactive ===
+// === PARALLAX on hero floats - deeper, mouse-reactive ===
 let rafId;
 function heroParallax(){
 const sy=scrollY;
@@ -877,7 +967,7 @@ const o3=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){setTimeo
 o3.observe(el);
 });
 
-// === EQUALIZER bars — randomized heights via JS ===
+// === EQUALIZER bars - randomized heights via JS ===
 (function(){
 const bars=document.querySelectorAll('.eq-bar');
 if(!bars.length)return;
