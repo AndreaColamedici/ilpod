@@ -188,6 +188,98 @@ section{padding:4.5rem 0}
 @keyframes logoReveal{from{width:0}to{width:1020px}}
 @keyframes logoRedIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
 
+
+/* ANIMATED MIC */
+.hero-mic{position:absolute;z-index:2;bottom:15%;right:8%;width:80px;opacity:0;animation:fadeIn 1s 2s both}
+.hero-mic svg{width:100%;height:auto}
+.mic-body{animation:micPulse 3s ease-in-out infinite}
+.mic-waves circle{animation:waveExpand 2s ease-out infinite;opacity:0}
+.mic-waves circle:nth-child(2){animation-delay:.5s}
+.mic-waves circle:nth-child(3){animation-delay:1s}
+@keyframes micPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes waveExpand{0%{r:20;opacity:.6}100%{r:50;opacity:0}}
+
+/* EQUALIZER */
+.eq{display:flex;align-items:flex-end;gap:3px;height:40px;justify-content:center;margin-bottom:1rem}
+.eq-bar{width:4px;background:var(--y);border-radius:2px;animation:eqBounce 1.2s ease-in-out infinite}
+.eq-bar:nth-child(1){animation-delay:0s;height:60%}
+.eq-bar:nth-child(2){animation-delay:.15s;height:100%}
+.eq-bar:nth-child(3){animation-delay:.3s;height:40%}
+.eq-bar:nth-child(4){animation-delay:.45s;height:80%}
+.eq-bar:nth-child(5){animation-delay:.6s;height:50%}
+.eq-bar:nth-child(6){animation-delay:.2s;height:90%}
+.eq-bar:nth-child(7){animation-delay:.35s;height:30%}
+@keyframes eqBounce{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.3)}}
+
+/* SOUND LINE divider */
+.sound-divider{width:100%;height:60px;position:relative;overflow:hidden;opacity:.15}
+.sound-divider svg{width:100%;height:100%}
+.sound-wave-line{stroke-dasharray:1200;stroke-dashoffset:1200;animation:drawLine 3s ease forwards}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+
+/* PREMIO enhanced hover */
+.premio{position:relative;overflow:hidden}
+.premio::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(242,199,68,.15) 0%,transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
+.premio:hover::before{opacity:1}
+.premio-icon{font-size:2rem;margin-bottom:1rem;display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.premio:hover .premio-icon{transform:scale(1.2) rotate(-5deg)}
+
+/* FLOATING PARTICLES */
+.particles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.particle{position:absolute;border-radius:50%;animation:particleFloat linear infinite}
+@keyframes particleFloat{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
+
+/* GLOWING TEXT for section titles */
+.stit-glow{position:relative}
+.stit-glow em{position:relative}
+.stit-glow em::after{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:2px;background:var(--y);transform:scaleX(0);transition:transform .8s cubic-bezier(.16,1,.3,1);transform-origin:left}
+.stit-glow.v em::after{transform:scaleX(1)}
+
+/* AUDIO PROGRESS bar in hero */
+.hero-audio-bar{width:60%;max-width:400px;height:3px;background:rgba(10,10,10,.1);border-radius:3px;margin:0 auto 2rem;overflow:hidden;opacity:0;animation:fadeIn 1s 1.8s both}
+.hero-audio-fill{height:100%;width:0;background:var(--b);border-radius:3px;animation:audioProgress 8s 2.5s ease-in-out infinite}
+@keyframes audioProgress{0%{width:0}50%{width:100%}50.1%{width:100%;opacity:1}55%{opacity:0}55.1%{width:0;opacity:0}60%{opacity:1;width:0}100%{width:0}}
+
+/* PLAY BUTTON pulse */
+.hero-play{width:50px;height:50px;border-radius:50%;background:var(--b);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;cursor:pointer;position:relative;opacity:0;animation:fadeUp 1s 1.5s both;transition:all .3s}
+.hero-play::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--b);opacity:.3;animation:playPulse 2s ease-out infinite}
+.hero-play::after{content:'';position:absolute;inset:-14px;border-radius:50%;border:1px solid var(--b);opacity:.15;animation:playPulse 2s .4s ease-out infinite}
+.hero-play svg{width:18px;height:18px;fill:var(--y);margin-left:2px}
+@keyframes playPulse{0%{transform:scale(1);opacity:.3}100%{transform:scale(1.4);opacity:0}}
+.hero-play:hover{transform:scale(1.1);box-shadow:0 5px 20px rgba(0,0,0,.15)}
+
+/* CRITERI section animated bg */
+.criteri{position:relative}
+.criteri-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.criteri-bg .line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(242,199,68,.1),transparent);animation:critLine 8s ease-in-out infinite}
+.criteri-bg .line:nth-child(1){top:20%;width:60%;left:10%;animation-delay:0s}
+.criteri-bg .line:nth-child(2){top:40%;width:40%;right:5%;animation-delay:2s}
+.criteri-bg .line:nth-child(3){top:60%;width:70%;left:15%;animation-delay:4s}
+.criteri-bg .line:nth-child(4){top:80%;width:50%;left:25%;animation-delay:1s}
+@keyframes critLine{0%,100%{opacity:0;transform:translateX(-30%)}50%{opacity:1;transform:translateX(30%)}}
+
+/* SUPER CARD shimmer */
+.super-card{position:relative;overflow:hidden}
+.super-card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.2) 50%,transparent 70%);transform:translateX(-100%);transition:none}
+.super-card:hover::after{animation:shimmer .8s ease forwards}
+@keyframes shimmer{to{transform:translateX(100%)}}
+
+/* NUMERI section enhanced */
+.num-v{position:relative;display:inline-block}
+.num-v::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--b);transition:width .8s cubic-bezier(.16,1,.3,1)}
+.num-v.counted::after{width:40px}
+
+/* CONTATTI animated border */
+.cont-email{position:relative}
+.cont-email::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--y);transform:scaleX(0);transform-origin:right;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.cont-email:hover::before{transform:scaleX(1);transform-origin:left}
+
+/* RIBBON enhanced */
+.rib{position:relative}
+.rib::before,.rib::after{content:'';position:absolute;top:0;width:80px;height:100%;z-index:1;pointer-events:none}
+.rib::before{left:0;background:linear-gradient(90deg,var(--b),transparent)}
+.rib::after{right:0;background:linear-gradient(-90deg,var(--b),transparent)}
+
 </style>
 </head>
 <body>
@@ -224,6 +316,8 @@ section{padding:4.5rem 0}
 <!-- Waveform 2 -->
 <svg class="f8" viewBox="0 0 160 50"><rect x="5" y="10" width="4" height="30" rx="2" fill="currentColor"/><rect x="15" y="5" width="4" height="40" rx="2" fill="currentColor"/><rect x="25" y="15" width="4" height="20" rx="2" fill="currentColor"/><rect x="35" y="2" width="4" height="46" rx="2" fill="currentColor"/><rect x="45" y="12" width="4" height="26" rx="2" fill="currentColor"/><rect x="55" y="8" width="4" height="34" rx="2" fill="currentColor"/><rect x="65" y="18" width="4" height="14" rx="2" fill="currentColor"/><rect x="75" y="5" width="4" height="40" rx="2" fill="currentColor"/><rect x="85" y="15" width="4" height="20" rx="2" fill="currentColor"/><rect x="95" y="10" width="4" height="30" rx="2" fill="currentColor"/><rect x="105" y="3" width="4" height="44" rx="2" fill="currentColor"/><rect x="115" y="18" width="4" height="14" rx="2" fill="currentColor"/><rect x="125" y="8" width="4" height="34" rx="2" fill="currentColor"/><rect x="135" y="12" width="4" height="26" rx="2" fill="currentColor"/><rect x="145" y="5" width="4" height="40" rx="2" fill="currentColor"/></svg>
 </div>
+<div class="particles" id="particles"></div>
+
 <div class="hero-c">
 <div class="hero-logo-svg">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" class="ilpod-logo">
@@ -265,7 +359,7 @@ section{padding:4.5rem 0}
 <section class="nuova" id="nuova">
 <div class="ctn">
 <div class="slab rv">V edizione · 2026</div>
-<h2 class="stit rv">Un passaggio<br>di <em>fase</em></h2>
+<h2 class="stit stit-glow rv">Un passaggio<br>di <em>fase</em></h2>
 <div class="nuova-grid">
 <div class="rv">
 <p class="sint" style="max-width:none">Gli Italian Podcast Awards entrano nel 2026 in una nuova fase della loro storia.</p>
@@ -289,25 +383,29 @@ section{padding:4.5rem 0}
 <section class="premi" id="premi">
 <div class="ctn">
 <div class="slab rv">I premi 2026</div>
-<h2 class="stit rv">Quattro riconoscimenti,<br>un <em>canone</em></h2>
+<h2 class="stit stit-glow rv">Quattro riconoscimenti,<br>un <em>canone</em></h2>
 <div class="premi-grid rv">
 <div class="premio">
 <div class="premio-n">01</div>
+<div class="premio-icon">🎙️</div>
 <div class="premio-t">Podcast dell'Anno</div>
 <div class="premio-d">Scelto dal Comitato Scientifico. Il podcast che ha saputo segnare l'immaginario e il dibattito pubblico nell'anno.</div>
 </div>
 <div class="premio">
 <div class="premio-n">02</div>
+<div class="premio-icon">📖</div>
 <div class="premio-t">La storia del podcast</div>
 <div class="premio-d">Scelto dal Comitato Scientifico. Il podcast che ha saputo costruire nel tempo un percorso autoriale rilevante e duraturo.</div>
 </div>
 <div class="premio">
 <div class="premio-n">03</div>
+<div class="premio-icon">🎓</div>
 <div class="premio-t">Premio della Podcast Academy</div>
 <div class="premio-d">Scelto dai partecipanti alla Piacenza Podcast Academy dopo un percorso di formazione all'ascolto critico.</div>
 </div>
 <div class="premio">
 <div class="premio-n">04</div>
+<div class="premio-icon">⚡</div>
 <div class="premio-t">Podcast Indie dell'Anno</div>
 <div class="premio-d">Scelto dal Comitato Scientifico. Il miglior podcast indipendente, al di fuori dei circuiti di maggiore visibilità.</div>
 </div>
@@ -317,9 +415,11 @@ section{padding:4.5rem 0}
 
 <!-- CRITERI -->
 <section class="criteri">
+<div class="criteri-bg"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
 <div class="ctn">
 <div class="slab rv">Comitato Scientifico</div>
-<h2 class="stit rv">Tre criteri di <em>selezione</em></h2>
+<div class="eq rv"><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div></div>
+ di <em>selezione</em></h2>
 <p class="sint rv" style="color:rgba(255,255,255,.5)">Il Comitato Scientifico seleziona i podcast sulla base di tre criteri, che costituiscono un orientamento di giudizio condiviso.</p>
 <div class="criteri-grid">
 <div class="criterio rv">
@@ -342,7 +442,7 @@ section{padding:4.5rem 0}
 <section class="archivio" id="archivio">
 <div class="ctn">
 <div class="slab rv">Archivio</div>
-<h2 class="stit rv">Le <em>edizioni</em> passate</h2>
+<h2 class="stit stit-glow rv">Le <em>edizioni</em> passate</h2>
 <div class="year-tabs rv">
 <div class="year-tab active" data-year="2025">2025</div>
 <div class="year-tab" data-year="2024">2024</div>
@@ -546,6 +646,56 @@ cx.stroke();
 }
 t+=.005;requestAnimationFrame(dr);
 }dr();
+
+// Particles
+(function(){
+const pc=document.getElementById('particles');
+if(!pc)return;
+const colors=['rgba(10,10,10,.06)','rgba(10,10,10,.04)','rgba(212,160,23,.08)','rgba(242,199,68,.06)'];
+for(let i=0;i<30;i++){
+const p=document.createElement('div');
+p.className='particle';
+const s=Math.random()*4+2;
+p.style.cssText=`width:${s}px;height:${s}px;background:${colors[i%4]};left:${Math.random()*100}%;animation-duration:${Math.random()*15+10}s;animation-delay:${Math.random()*10}s`;
+pc.appendChild(p);
+}
+})();
+
+// Stit glow on reveal
+document.querySelectorAll('.stit-glow').forEach(el=>{
+const o2=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');o2.unobserve(x.target)}}),{threshold:.3});
+o2.observe(el);
+});
+
+// Num underline after count
+document.querySelectorAll('.num-v').forEach(el=>{
+const o3=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('counted'),1600);o3.unobserve(x.target)}}),{threshold:.5});
+o3.observe(el);
+});
+
+// Sound dividers - inject on scroll
+document.querySelectorAll('section').forEach((sec,i)=>{
+if(i===0)return;
+const sd=document.createElement('div');
+sd.className='sound-divider';
+sd.innerHTML='<svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="sound-wave-line" d="M0 30'+Array.from({length:24},(_,j)=>`Q${j*50+25} ${Math.random()>0.5?10:50} ${(j+1)*50} 30`).join('')+'" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+sec.style.position='relative';
+sec.insertBefore(sd,sec.firstChild);
+});
+
+// Parallax on hero floats
+let rafId;
+window.addEventListener('scroll',()=>{
+if(rafId)return;
+rafId=requestAnimationFrame(()=>{
+const sy=scrollY;
+document.querySelectorAll('.hero-floats svg').forEach((s,i)=>{
+s.style.transform=`translateY(${sy*(0.02+i*0.008)}px)`;
+});
+rafId=null;
+});
+});
+
 </script>
 </body>
 </html>
