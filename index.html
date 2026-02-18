@@ -53,7 +53,7 @@ nav .ctn{display:flex;justify-content:space-between;align-items:center}
 .hero-logo{font-family:var(--serif);font-size:clamp(5rem,14vw,12rem);font-weight:400;line-height:.85;letter-spacing:-.04em;margin-bottom:1rem;opacity:0;animation:fadeUp 1s .3s both}
 .hero-logo em{font-style:italic}
 .hero-sub{font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.8rem);font-style:italic;line-height:1.3;margin-bottom:2rem;opacity:0;animation:fadeUp 1s .5s both;color:var(--b2)}
-.hero-date{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:fadeUp 1s .7s both;margin-bottom:3rem;color:var(--b2)}
+
 .hero-btn{display:inline-block;background:var(--b);color:var(--y);padding:.8rem 2.2rem;border-radius:6px;font-weight:500;font-size:.9rem;opacity:0;animation:fadeUp 1s .9s both;transition:all .3s}
 .hero-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.15)}
 .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:1;font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--b2);opacity:0;animation:fadeIn 1s 1.2s both}
@@ -305,6 +305,26 @@ section{padding:4.5rem 0}
 .rib::before{left:0;background:linear-gradient(90deg,var(--b),transparent)}
 .rib::after{right:0;background:linear-gradient(-90deg,var(--b),transparent)}
 
+/* Hero date emphasis */
+.hero-date{display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fadeUp 1s .7s both;margin-bottom:3rem}
+.hero-date-label{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--b2)}
+.hero-date-main{font-family:'Instrument Serif',serif;font-size:clamp(1.6rem,4vw,2.8rem);color:var(--y);font-weight:400;position:relative;padding-bottom:8px}
+.hero-date-main::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--y);animation:dateReveal 1.2s ease .8s forwards}
+@keyframes dateReveal{to{width:100%}}
+/* Segnala section */
+.segnala{background:var(--b);padding:clamp(60px,10vw,120px) 0;position:relative}
+.segnala .stit{color:var(--w)}
+.segnala-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,60px);margin-top:clamp(30px,4vw,50px)}
+.segnala-text p{color:rgba(255,255,255,.7);font-size:clamp(.95rem,1.2vw,1.05rem);line-height:1.75;margin-bottom:1.2em}
+.segnala-box{background:var(--b2);border:1px solid rgba(242,199,68,.15);border-radius:16px;padding:clamp(24px,3vw,40px);position:relative;overflow:hidden}
+.segnala-box::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--y),var(--yd))}
+.segnala-box h3{font-family:'Instrument Serif',serif;font-size:clamp(1.2rem,2vw,1.5rem);color:var(--y);margin-bottom:16px}
+.segnala-email{margin:16px 0 20px}
+.segnala-email a{font-family:'JetBrains Mono',monospace;font-size:clamp(1rem,1.5vw,1.2rem);color:var(--y);text-decoration:none;border-bottom:1px solid rgba(242,199,68,.3);padding-bottom:2px;transition:border-color .3s}
+.segnala-email a:hover{border-color:var(--y)}
+.segnala-box p{color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.7;margin-bottom:.6em}
+.segnala-lista{color:rgba(255,255,255,.5)!important;font-size:.9rem!important;font-style:italic}
+@media(max-width:768px){.segnala-wrap{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -314,6 +334,7 @@ section{padding:4.5rem 0}
 <ul class="nlinks" id="nl">
 <li><a href="#nuova">2026</a></li>
 <li><a href="#premi">I premi</a></li>
+<li><a href="#segnala">Segnala</a></li>
 <li><a href="#academy">Academy</a></li>
 <li><a href="#archivio">Archivio</a></li>
 <li><a href="#contatti" class="ncta">Contatti</a></li>
@@ -353,7 +374,7 @@ section{padding:4.5rem 0}
 </svg>
 </div>
 <div class="hero-sub">Italian Podcast Awards</div>
-<div class="hero-date">V edizione · Piacenza · 23 settembre 2026</div>
+<div class="hero-date"><span class="hero-date-label">V edizione · Piacenza</span><span class="hero-date-main">23 settembre 2026</span></div>
 <a href="#nuova" class="hero-btn">La nuova edizione →</a>
 </div>
 <div class="hero-scroll">Scroll</div>
@@ -477,6 +498,26 @@ section{padding:4.5rem 0}
 <div class="criterio rv d2">
 <h3>Originalità</h3>
 <p>Il podcast propone qualcosa che non esisteva, o che esisteva in forma diversa. Può trattarsi di un formato nuovo, di un punto di vista inedito, di un modo di raccontare che sposta i confini del medium. Il Comitato valuta il contributo dell'opera all'evoluzione del linguaggio podcast.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SEGNALAZIONI -->
+<section class="segnala" id="segnala">
+<div class="ctn">
+<h2 class="stit rv"><span class="stit-glow">Segnala un podcast</span></h2>
+<div class="segnala-wrap rv">
+<div class="segnala-text">
+<p>Il Comitato Scientifico opera in piena autonomia nella selezione dei podcast finalisti e nella scelta dei vincitori. Il suo lavoro si fonda su un monitoraggio costante del panorama podcast italiano, che si arricchisce anche delle segnalazioni ricevute dalla comunità di ascoltatori e ascoltatrici.</p>
+<p>Chiunque può segnalare un podcast che ritiene meritevole di attenzione. Le segnalazioni non costituiscono candidature e non garantiscono la selezione: rappresentano un contributo prezioso al lavoro di ascolto e ricerca del Comitato, che valuterà ogni indicazione secondo i propri criteri.</p>
+<p>Le segnalazioni sono aperte tutto l’anno. Per inviarne una, scrivi a:</p>
+</div>
+<div class="segnala-box">
+<h3>Come segnalare</h3>
+<p class="segnala-email"><a href="mailto:segnalazioni@ilpod.it">segnalazioni@ilpod.it</a></p>
+<p>Indica nella mail:</p>
+<p class="segnala-lista">Titolo del podcast · Autore o autrice · Piattaforma e link · Una breve motivazione · Eventuale contatto del podcaster</p>
 </div>
 </div>
 </div>
@@ -666,7 +707,7 @@ section{padding:4.5rem 0}
 </div>
 <div class="cont-r rv d1">
 <h3>IlPod è un progetto Tlon</h3>
-<p>Fondato da Andrea Colamedici, Fabio Ragazzo e Maura Gancitano. Un progetto culturale promosso dal Comune di Piacenza e dalla Fondazione di Piacenza e Vigevano, realizzato da Fondazione Teatri di Piacenza.</p>
+<p>Fondato da Andrea Colamedici, Fabio Ragazzo e Maura Gancitano, con la direzione artistica di Rossella Pivanti. Un progetto culturale promosso dal Comune di Piacenza e dalla Fondazione di Piacenza e Vigevano, realizzato da Fondazione Teatri di Piacenza.</p>
 <h3>Dove</h3>
 <p>Piacenza · In dialogo con il Festival del Pensare Contemporaneo</p>
 </div>
