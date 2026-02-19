@@ -314,17 +314,31 @@ section{padding:4.5rem 0}
 /* Segnala section */
 .segnala{background:var(--b);padding:clamp(60px,10vw,120px) 0;position:relative}
 .segnala .stit{color:var(--w)}
-.segnala-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,60px);margin-top:clamp(30px,4vw,50px)}
+.segnala-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,60px);margin-top:clamp(30px,4vw,50px);align-items:start}
 .segnala-text p{color:rgba(255,255,255,.7);font-size:clamp(.95rem,1.2vw,1.05rem);line-height:1.75;margin-bottom:1.2em}
-.segnala-box{background:var(--b2);border:1px solid rgba(242,199,68,.15);border-radius:16px;padding:clamp(24px,3vw,40px);position:relative;overflow:hidden}
-.segnala-box::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--y),var(--yd))}
-.segnala-box h3{font-family:'Instrument Serif',serif;font-size:clamp(1.2rem,2vw,1.5rem);color:var(--y);margin-bottom:16px}
-.segnala-email{margin:16px 0 20px}
-.segnala-email a{font-family:'JetBrains Mono',monospace;font-size:clamp(1rem,1.5vw,1.2rem);color:var(--y);text-decoration:none;border-bottom:1px solid rgba(242,199,68,.3);padding-bottom:2px;transition:border-color .3s}
-.segnala-email a:hover{border-color:var(--y)}
-.segnala-box p{color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.7;margin-bottom:.6em}
-.segnala-lista{color:rgba(255,255,255,.5)!important;font-size:.9rem!important;font-style:italic}
-@media(max-width:768px){.segnala-wrap{grid-template-columns:1fr}}
+.segnala-form{background:var(--b2);border:1px solid rgba(242,199,68,.15);border-radius:16px;padding:clamp(28px,3vw,44px);position:relative;overflow:hidden}
+.segnala-form::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--y),var(--yd))}
+.segnala-form h3{font-family:'Instrument Serif',serif;font-size:clamp(1.2rem,2vw,1.5rem);color:var(--y);margin-bottom:24px}
+.sf-group{margin-bottom:18px}
+.sf-group label{display:block;font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px;font-weight:500}
+.sf-group input,.sf-group textarea,.sf-group select{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;color:var(--w);font-family:'Inter',sans-serif;font-size:.95rem;transition:border-color .3s,background .3s;outline:none;box-sizing:border-box}
+.sf-group input:focus,.sf-group textarea:focus,.sf-group select:focus{border-color:rgba(242,199,68,.5);background:rgba(255,255,255,.06)}
+.sf-group input::placeholder,.sf-group textarea::placeholder{color:rgba(255,255,255,.2)}
+.sf-group textarea{resize:vertical;min-height:80px}
+.sf-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
+.sf-group select option{background:var(--b2);color:var(--w)}
+.sf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sf-submit{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--y);color:var(--y);font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px 32px;border-radius:60px;cursor:pointer;transition:all .4s;margin-top:8px;width:100%;justify-content:center}
+.sf-submit:hover{background:var(--y);color:var(--b)}
+.sf-submit:disabled{opacity:.4;cursor:not-allowed}
+.sf-submit:disabled:hover{background:transparent;color:var(--y)}
+.sf-note{color:rgba(255,255,255,.35);font-size:.78rem;margin-top:12px;line-height:1.5;font-style:italic}
+.sf-ok{display:none;text-align:center;padding:40px 20px}
+.sf-ok.show{display:block}
+.sf-ok h4{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--y);margin-bottom:10px}
+.sf-ok p{color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.6}
+.sf-fields.hide{display:none}
+@media(max-width:768px){.segnala-wrap{grid-template-columns:1fr}.sf-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -511,13 +525,58 @@ section{padding:4.5rem 0}
 <div class="segnala-text">
 <p>Il Comitato Scientifico opera in piena autonomia nella selezione dei podcast finalisti e nella scelta dei vincitori. Il suo lavoro si fonda su un monitoraggio costante del panorama podcast italiano, che si arricchisce anche delle segnalazioni ricevute dalla comunità di ascoltatori e ascoltatrici.</p>
 <p>Chiunque può segnalare un podcast che ritiene meritevole di attenzione. Le segnalazioni non costituiscono candidature e non garantiscono la selezione: rappresentano un contributo prezioso al lavoro di ascolto e ricerca del Comitato, che valuterà ogni indicazione secondo i propri criteri.</p>
-<p>Le segnalazioni sono aperte tutto l’anno. Per inviarne una, scrivi a:</p>
+<p>Le segnalazioni sono aperte tutto l'anno. Compila il form e il tuo suggerimento arriverà direttamente al Comitato.</p>
 </div>
-<div class="segnala-box">
-<h3>Come segnalare</h3>
-<p class="segnala-email"><a href="mailto:segnalazioni@ilpod.it">segnalazioni@ilpod.it</a></p>
-<p>Indica nella mail:</p>
-<p class="segnala-lista">Titolo del podcast · Autore o autrice · Piattaforma e link · Una breve motivazione · Eventuale contatto del podcaster</p>
+<div class="segnala-form" id="segnala-form">
+<h3>Segnala un podcast</h3>
+<div class="sf-fields" id="sf-fields">
+<div class="sf-row">
+<div class="sf-group">
+<label for="sf-titolo">Titolo del podcast *</label>
+<input type="text" id="sf-titolo" name="titolo" placeholder="Il nome del podcast" required>
+</div>
+<div class="sf-group">
+<label for="sf-autore">Autore o autrice *</label>
+<input type="text" id="sf-autore" name="autore" placeholder="Chi lo produce">
+</div>
+</div>
+<div class="sf-group">
+<label for="sf-link">Link al podcast *</label>
+<input type="url" id="sf-link" name="link" placeholder="https://open.spotify.com/show/... o altra piattaforma">
+</div>
+<div class="sf-group">
+<label for="sf-piattaforma">Piattaforma principale</label>
+<select id="sf-piattaforma" name="piattaforma">
+<option value="">Seleziona...</option>
+<option value="Spotify">Spotify</option>
+<option value="Apple Podcasts">Apple Podcasts</option>
+<option value="YouTube">YouTube</option>
+<option value="Spreaker">Spreaker</option>
+<option value="Amazon Music">Amazon Music</option>
+<option value="Altra">Altra</option>
+</select>
+</div>
+<div class="sf-group">
+<label for="sf-motivazione">Perché lo segnali? *</label>
+<textarea id="sf-motivazione" name="motivazione" placeholder="Racconta brevemente cosa rende questo podcast meritevole di attenzione" rows="3"></textarea>
+</div>
+<div class="sf-row">
+<div class="sf-group">
+<label for="sf-nome">Il tuo nome</label>
+<input type="text" id="sf-nome" name="nome_segnalatore" placeholder="Facoltativo">
+</div>
+<div class="sf-group">
+<label for="sf-email">La tua email</label>
+<input type="email" id="sf-email" name="email_segnalatore" placeholder="Facoltativo">
+</div>
+</div>
+<button type="button" class="sf-submit" id="sf-btn" onclick="inviaForm()">Invia segnalazione →</button>
+<p class="sf-note">I campi contrassegnati con * sono obbligatori. I tuoi dati personali saranno utilizzati esclusivamente per eventuali comunicazioni relative alla segnalazione.</p>
+</div>
+<div class="sf-ok" id="sf-ok">
+<h4>Grazie per la segnalazione</h4>
+<p>Il tuo suggerimento è stato inviato al Comitato Scientifico. Ogni segnalazione viene presa in considerazione, anche se non è possibile garantire una risposta individuale.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1021,6 +1080,49 @@ b.style.transition='height .15s ease';
 setTimeout(animEq,150);
 }animEq();
 })();
+
+// === SEGNALAZIONE FORM ===
+const FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbzPtgCRZq9cW7j-izYh59YZOOrsnyxzEs7cJBEr1XuZ4AKk_He0zKXDt4XWza68w8E8Bg/exec';
+
+function inviaForm(){
+const btn=document.getElementById('sf-btn');
+const titolo=document.getElementById('sf-titolo').value.trim();
+const autore=document.getElementById('sf-autore').value.trim();
+const link=document.getElementById('sf-link').value.trim();
+const piattaforma=document.getElementById('sf-piattaforma').value;
+const motivazione=document.getElementById('sf-motivazione').value.trim();
+const nome=document.getElementById('sf-nome').value.trim();
+const email=document.getElementById('sf-email').value.trim();
+
+if(!titolo||!autore||!link||!motivazione){
+btn.textContent='Compila i campi obbligatori';
+btn.style.borderColor='#c44';btn.style.color='#c44';
+setTimeout(()=>{btn.textContent='Invia segnalazione →';btn.style.borderColor='';btn.style.color=''},2500);
+return;
+}
+
+btn.disabled=true;btn.textContent='Invio in corso...';
+
+const payload={titolo,autore,link,piattaforma,motivazione,nome_segnalatore:nome,email_segnalatore:email};
+
+fetch(FORM_ENDPOINT,{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify(payload),
+mode:'no-cors'
+})
+.then(()=>{
+document.getElementById('sf-fields').classList.add('hide');
+document.getElementById('sf-ok').classList.add('show');
+})
+.catch(err=>{
+console.error('Errore invio:',err);
+btn.disabled=false;
+btn.textContent='Errore — riprova';
+btn.style.borderColor='#c44';btn.style.color='#c44';
+setTimeout(()=>{btn.textContent='Invia segnalazione →';btn.style.borderColor='';btn.style.color=''},3000);
+});
+}
 
 </script>
 </body>
