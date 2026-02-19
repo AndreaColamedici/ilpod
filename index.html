@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IlPod - Italian Podcast Awards</title>
 <meta name="description" content="Gli Italian Podcast Awards. La piattaforma culturale dedicata al podcasting italiano. Piacenza, 23 settembre 2026.">
+<meta name="theme-color" content="#F2C744">
+<meta property="og:title" content="IlPod - Italian Podcast Awards">
+<meta property="og:description" content="La piattaforma culturale dedicata al podcasting italiano. V edizione · Piacenza · 23 settembre 2026.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ilpod.it">
+<meta property="og:image" content="https://ilpod.it/og-image.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IlPod - Italian Podcast Awards">
+<meta name="twitter:description" content="La piattaforma culturale dedicata al podcasting italiano. V edizione · Piacenza · 23 settembre 2026.">
+<meta name="twitter:image" content="https://ilpod.it/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F2C744'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='18' font-weight='bold' fill='%230A0A0A'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -215,8 +227,9 @@ section{padding:4.5rem 0}
 .premio{position:relative;overflow:hidden}
 .premio::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(242,199,68,.15) 0%,transparent 60%);opacity:0;transition:opacity .5s;pointer-events:none}
 .premio:hover::before{opacity:1}
-.premio-icon{font-size:2rem;margin-bottom:1rem;display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
-.premio:hover .premio-icon{transform:scale(1.2) rotate(-5deg)}
+.premio-icon{margin-bottom:1rem;display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1);color:var(--g4);line-height:0}
+.premio-icon svg{width:36px;height:36px}
+.premio:hover .premio-icon{transform:scale(1.15) rotate(-5deg);color:var(--y)}
 
 /* PARTICLES - canvas driven */
 .particles-canvas{position:absolute;inset:0;pointer-events:none;z-index:0}
@@ -308,40 +321,45 @@ section{padding:4.5rem 0}
 /* Hero date emphasis */
 .hero-date{display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fadeUp 1s .7s both;margin-bottom:3rem}
 .hero-date-label{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--b2)}
-.hero-date-main{font-family:'Instrument Serif',serif;font-size:clamp(1.6rem,4vw,2.8rem);color:var(--y);font-weight:400;position:relative;padding-bottom:8px}
-.hero-date-main::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--y);animation:dateReveal 1.2s ease .8s forwards}
+.hero-date-main{font-family:'Instrument Serif',serif;font-size:clamp(1.6rem,4vw,2.8rem);color:var(--b);font-weight:400;position:relative;padding-bottom:8px}
+.hero-date-main::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--b);animation:dateReveal 1.2s ease .8s forwards}
 @keyframes dateReveal{to{width:100%}}
 /* Segnala section */
-.segnala{background:var(--b);padding:clamp(60px,10vw,120px) 0;position:relative}
-.segnala .stit{color:var(--w)}
+.segnala{background:var(--y3);padding:clamp(60px,10vw,120px) 0;position:relative;overflow:hidden}
+.segnala::before{content:'';position:absolute;top:-60px;right:-120px;width:400px;height:400px;background:radial-gradient(circle,rgba(242,199,68,.12) 0%,transparent 70%);pointer-events:none}
+.segnala::after{content:'';position:absolute;bottom:-80px;left:-100px;width:350px;height:350px;background:radial-gradient(circle,rgba(212,160,23,.08) 0%,transparent 70%);pointer-events:none}
+.segnala .stit{color:var(--b)}
 .segnala-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,60px);margin-top:clamp(30px,4vw,50px);align-items:start}
-.segnala-text p{color:rgba(255,255,255,.7);font-size:clamp(.95rem,1.2vw,1.05rem);line-height:1.75;margin-bottom:1.2em}
-.segnala-form{background:var(--b2);border:1px solid rgba(242,199,68,.15);border-radius:16px;padding:clamp(28px,3vw,44px);position:relative;overflow:hidden}
+.segnala-text p{color:var(--g7);font-size:clamp(.95rem,1.2vw,1.05rem);line-height:1.75;margin-bottom:1.2em}
+.segnala-form{background:var(--w);border:1px solid rgba(10,10,10,.06);border-radius:16px;padding:clamp(28px,3vw,44px);position:relative;overflow:hidden;box-shadow:0 4px 30px rgba(10,10,10,.04),0 1px 3px rgba(10,10,10,.03)}
 .segnala-form::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,var(--y),var(--yd))}
-.segnala-form h3{font-family:'Instrument Serif',serif;font-size:clamp(1.2rem,2vw,1.5rem);color:var(--y);margin-bottom:24px}
+.segnala-form h3{font-family:'Instrument Serif',serif;font-size:clamp(1.2rem,2vw,1.5rem);color:var(--b);margin-bottom:24px}
 .sf-group{margin-bottom:18px}
-.sf-group label{display:block;font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px;font-weight:500}
-.sf-group input,.sf-group textarea,.sf-group select{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;color:var(--w);font-family:'Inter',sans-serif;font-size:.95rem;transition:border-color .3s,background .3s;outline:none;box-sizing:border-box}
-.sf-group input:focus,.sf-group textarea:focus,.sf-group select:focus{border-color:rgba(242,199,68,.5);background:rgba(255,255,255,.06)}
-.sf-group input::placeholder,.sf-group textarea::placeholder{color:rgba(255,255,255,.2)}
+.sf-group label{display:block;font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--g4);margin-bottom:6px;font-weight:500}
+.sf-group input,.sf-group textarea,.sf-group select{width:100%;background:var(--g1);border:1px solid rgba(10,10,10,.08);border-radius:8px;padding:12px 14px;color:var(--b);font-family:'Inter',sans-serif;font-size:.95rem;transition:border-color .3s,box-shadow .3s;outline:none;box-sizing:border-box}
+.sf-group input:focus,.sf-group textarea:focus,.sf-group select:focus{border-color:var(--y);box-shadow:0 0 0 3px rgba(242,199,68,.15)}
+.sf-group input::placeholder,.sf-group textarea::placeholder{color:var(--g4)}
 .sf-group textarea{resize:vertical;min-height:80px}
 .sf-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
-.sf-group select option{background:var(--b2);color:var(--w)}
+.sf-group select option{background:var(--w);color:var(--b)}
 .sf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.sf-submit{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--y);color:var(--y);font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px 32px;border-radius:60px;cursor:pointer;transition:all .4s;margin-top:8px;width:100%;justify-content:center}
-.sf-submit:hover{background:var(--y);color:var(--b)}
+.sf-submit{display:inline-flex;align-items:center;gap:8px;background:var(--b);border:2px solid var(--b);color:var(--w);font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:14px 32px;border-radius:60px;cursor:pointer;transition:all .4s;margin-top:8px;width:100%;justify-content:center}
+.sf-submit:hover{background:var(--y);border-color:var(--y);color:var(--b)}
 .sf-submit:disabled{opacity:.4;cursor:not-allowed}
-.sf-submit:disabled:hover{background:transparent;color:var(--y)}
-.sf-note{color:rgba(255,255,255,.35);font-size:.78rem;margin-top:12px;line-height:1.5;font-style:italic}
+.sf-submit:disabled:hover{background:var(--b);border-color:var(--b);color:var(--w)}
+.sf-note{color:var(--g4);font-size:.78rem;margin-top:12px;line-height:1.5;font-style:italic}
 .sf-ok{display:none;text-align:center;padding:40px 20px}
 .sf-ok.show{display:block}
-.sf-ok h4{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--y);margin-bottom:10px}
-.sf-ok p{color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.6}
+.sf-ok h4{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--b);margin-bottom:10px}
+.sf-ok p{color:var(--g7);font-size:.95rem;line-height:1.6}
 .sf-fields.hide{display:none}
 @media(max-width:768px){.segnala-wrap{grid-template-columns:1fr}.sf-row{grid-template-columns:1fr}}
+/* Noscript: show content if JS disabled */
+noscript .rv{opacity:1!important;transform:none!important}
 </style>
 </head>
 <body>
+<noscript><style>.rv{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
 
 <nav id="nav"><div class="ctn">
 <a href="#" class="nlogo">il POD</a>
@@ -466,25 +484,25 @@ section{padding:4.5rem 0}
 <div class="premi-grid rv">
 <div class="premio">
 <div class="premio-n">01</div>
-<div class="premio-icon">🎙️</div>
+<div class="premio-icon"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="14" r="8" stroke="currentColor" fill="none" stroke-width="1.8"/><line x1="20" y1="22" x2="20" y2="32" stroke="currentColor" stroke-width="1.8"/><line x1="14" y1="32" x2="26" y2="32" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 18c0 6 4.5 10 10 10s10-4 10-10" stroke="currentColor" fill="none" stroke-width="1.3" opacity=".5"/></svg></div>
 <div class="premio-t">Podcast dell'Anno</div>
 <div class="premio-d">Il podcast che ha saputo segnare l'immaginario e il dibattito pubblico nell'anno.</div>
 </div>
 <div class="premio">
 <div class="premio-n">02</div>
-<div class="premio-icon">📖</div>
+<div class="premio-icon"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M8 8c6-2 10 0 12 3 2-3 6-5 12-3v22c-6-2-10 0-12 3-2-3-6-5-12-3z" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linejoin="round"/><line x1="20" y1="11" x2="20" y2="33" stroke="currentColor" stroke-width="1.3" opacity=".4"/></svg></div>
 <div class="premio-t">La storia del podcast</div>
 <div class="premio-d">Il podcast che ha saputo costruire nel tempo un percorso autoriale rilevante e duraturo.</div>
 </div>
 <div class="premio">
 <div class="premio-n">03</div>
-<div class="premio-icon">🎓</div>
+<div class="premio-icon"><svg viewBox="0 0 40 40" width="40" height="40"><polygon points="20,6 36,16 20,26 4,16" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linejoin="round"/><line x1="36" y1="16" x2="36" y2="28" stroke="currentColor" stroke-width="1.3"/><path d="M12 20v8c0 3 3.5 5 8 5s8-2 8-5v-8" stroke="currentColor" fill="none" stroke-width="1.3" opacity=".5"/></svg></div>
 <div class="premio-t">Premio della Podcast Academy</div>
 <div class="premio-d">Scelto dai partecipanti alla Piacenza Podcast Academy dopo un percorso di formazione all'ascolto critico.</div>
 </div>
 <div class="premio">
 <div class="premio-n">04</div>
-<div class="premio-icon">⚡</div>
+<div class="premio-icon"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M20 6l-8 16h7l-3 12 12-18h-7z" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
 <div class="premio-t">Podcast Indie dell'Anno</div>
 <div class="premio-d">Il miglior podcast indipendente, al di fuori dei circuiti di maggiore visibilità.</div>
 </div>
@@ -775,8 +793,8 @@ section{padding:4.5rem 0}
 </section>
 
 <footer><div class="ctn"><div class="foot">
-<p class="foot-c">© 2026 IlPod - Italian Podcast Awards · Un progetto Tlon</p>
-<div class="foot-l"><a href="/privacy">Privacy</a><a href="/regolamento">Regolamento</a><a href="/press">Press</a></div>
+<p class="foot-c">© 2026 IlPod - Italian Podcast Awards · Un progetto <a href="https://tlon.it" target="_blank" style="color:inherit;border-bottom:1px solid rgba(255,255,255,.15)">Tlon</a> · Piacenza</p>
+<div class="foot-l"><a href="https://www.instagram.com/ilpod.it/" target="_blank">Instagram</a><a href="mailto:segreteriailpod@tlon.it">Contatti</a></div>
 </div></div></footer>
 
 <script>
