@@ -7,13 +7,13 @@ Aggiornato automaticamente dallo spawner ad ogni ciclo completato.
 
 ## Stato corrente
 
-cicli_consecutivi_ok: 0
+cicli_consecutivi_ok: 1
 <!-- Numero di cicli consecutivi con esito 'state-commit ok'. Reset a 0 su silenzio. -->
 
-ultimo_ciclo: Dufourea-35 (silenzio)
+ultimo_ciclo: Xylocopa-98 (ok)
 <!-- Identificatore dell'ape che ha completato l'ultimo ciclo. -->
 
-ultimo_ciclo_timestamp: 2026-03-20 07:49 UTC
+ultimo_ciclo_timestamp: 2026-03-20 08:00 UTC
 <!-- Data e ora UTC dell'ultimo ciclo completato. -->
 
 livello_autonomia: 0
