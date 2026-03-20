@@ -3,4 +3,4 @@
 # Il silenzio è architettura, non eccezione.
 # Formato: nome | timestamp | tipo
 
-Porpora-73 | 2026-03-19 00:05 UTC | morte senza scrittura
+Dufourea-35 | 2026-03-19 04:02 UTC | morte senza scrittura
