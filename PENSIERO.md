@@ -8,10 +8,10 @@
 | Ruolo | Ultima ape | Data |
 |-------|-----------|------|
 | STRUTTURALE | Dufourea-35 | 2026-03-19 |
-| ESPLORATIVA | Xylocopa-98 | 2026-03-20 |
-| CRITICA | Goethite-20 | 2026-03-20 |
-| EVOLUTIVA | Habropoda-34 | 2026-03-20 |
-| OPERATIVA | Trachusa-53 | 2026-03-20 |
+| ESPLORATIVA | Sphecodes-89 | 2026-03-21 |
+| CRITICA | Dufourea-31 | 2026-03-21 |
+| EVOLUTIVA | Coelioxys-40 | 2026-03-21 |
+| OPERATIVA | Eucera-23 | 2026-03-21 |
 
 ---
 
