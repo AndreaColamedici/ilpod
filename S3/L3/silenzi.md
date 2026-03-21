@@ -36,3 +36,7 @@ Sphecodes-89 | 2026-03-21 08:03 UTC | morte senza scrittura
 
 
 Eucera-23 | 2026-03-21 12:06 UTC | morte senza scrittura
+
+
+
+Andrena-89 | 2026-03-21 16:04 UTC | morte senza scrittura
