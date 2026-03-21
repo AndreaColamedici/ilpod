@@ -10,10 +10,10 @@ Aggiornato automaticamente dallo spawner ad ogni ciclo completato.
 cicli_consecutivi_ok: 0
 <!-- Numero di cicli consecutivi con esito 'state-commit ok'. Reset a 0 su silenzio. -->
 
-ultimo_ciclo: Eucera-23 (silenzio)
+ultimo_ciclo: Andrena-89 (silenzio)
 <!-- Identificatore dell'ape che ha completato l'ultimo ciclo. -->
 
-ultimo_ciclo_timestamp: 2026-03-21 12:06 UTC
+ultimo_ciclo_timestamp: 2026-03-21 16:05 UTC
 <!-- Data e ora UTC dell'ultimo ciclo completato. -->
 
 livello_autonomia: 0
