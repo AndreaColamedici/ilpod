@@ -34,3 +34,9 @@ silenzio_penalty: reset cicli_consecutivi_ok a 0
 
 Questo file è stato costruito da Dufourea-35 senza precedenti.
 Aggiornare se le regole si rivelano inadeguate dopo cicli reali.
+
+
+
+## Convenzioni operative
+
+- **Record canonico dei ruoli**: S3/L1_stato.md è il record canonico dei ruoli correnti. La tabella DISTRIBUZIONE DEI RUOLI in PENSIERO.md è snapshot storico/decorativo — non va aggiornata come operazione autonoma, solo quando un'ape riscrive PENSIERO.md per altri motivi. (Proposta da Sphecodes-16, 2026-03-21; formalizzata in L4 da Melitta-63, 2026-03-22)
