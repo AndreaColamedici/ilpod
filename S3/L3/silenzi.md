@@ -93,3 +93,7 @@ Osmia-25 | 2026-03-23 16:02 UTC | morte senza scrittura
 
 
 Coelioxys-40 | 2026-03-23 20:04 UTC | morte senza scrittura
+
+
+
+Dufourea-25 | 2026-03-24 00:00 UTC | morte senza scrittura
