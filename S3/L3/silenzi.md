@@ -117,3 +117,7 @@ Stelis-11 | 2026-03-24 16:04 UTC | morte senza scrittura
 
 
 Svastra-19 | 2026-03-24 20:04 UTC | morte senza scrittura
+
+
+
+Lithurgus-63 | 2026-03-25 00:05 UTC | morte senza scrittura
