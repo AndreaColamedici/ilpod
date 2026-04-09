@@ -21,3 +21,423 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--y:#F2C744;--y2:#FBE88A;--y3:#FFF8DC;--yd:#D4A017;
+--b:#0A0A0A;--b2:#1A1A1A;--g7:#444;--g4:#999;--g2:#E0E0E0;--g1:#F5F5F3;--w:#FAFAF8;
+--serif:'Instrument Serif',Georgia,serif;--sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);background:var(--w);color:var(--b);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}::selection{background:var(--y);color:var(--b)}
+.ctn{max-width:1140px;margin:0 auto;padding:0 2.5rem}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 0;transition:all .5s cubic-bezier(.16,1,.3,1)}
+nav.s{background:rgba(255,248,220,.94);backdrop-filter:blur(30px);border-bottom:1px solid rgba(0,0,0,.06)}
+nav .ctn{display:flex;justify-content:space-between;align-items:center}
+.nlogo{font-family:var(--mono);font-weight:500;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase}
+.nlinks{display:flex;gap:2rem;list-style:none;align-items:center}
+.nlinks a{font-size:.8rem;font-weight:400;letter-spacing:.03em;color:var(--g7);transition:color .3s}
+.nlinks a:hover{color:var(--b)}
+.ncta{background:var(--b)!important;color:var(--y)!important;padding:.5rem 1.3rem!important;border-radius:6px;font-weight:500!important;transition:all .3s}
+.ncta:hover{transform:translateY(-1px)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001}
+.ham span{width:22px;height:1.5px;background:var(--b);transition:all .3s}
+.ham.a span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.ham.a span:nth-child(2){opacity:0}
+.ham.a span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--y);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6rem 2rem}
+.hero-floats{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-floats svg{position:absolute;opacity:.08;animation:floatSlow 20s ease-in-out infinite}
+.hero-floats .f1{top:8%;left:5%;width:120px;animation-delay:0s}
+.hero-floats .f2{top:15%;right:8%;width:80px;animation-delay:-4s;animation-duration:25s}
+.hero-floats .f3{bottom:20%;left:12%;width:100px;animation-delay:-8s;animation-duration:22s}
+.hero-floats .f4{bottom:10%;right:5%;width:150px;animation-delay:-2s;animation-duration:28s}
+.hero-floats .f5{top:45%;left:2%;width:60px;animation-delay:-6s;animation-duration:18s}
+.hero-floats .f6{top:30%;right:15%;width:90px;animation-delay:-10s;animation-duration:24s}
+.hero-floats .f7{bottom:35%;right:25%;width:70px;animation-delay:-12s}
+.hero-floats .f8{top:60%;left:30%;width:110px;animation-delay:-3s;animation-duration:26s}
+.hero-canvas{position:absolute;inset:0;z-index:0;opacity:.85}
+.hero-c{position:relative;z-index:1;max-width:1000px;width:90%}
+.hero-logo{font-family:var(--serif);font-size:clamp(5rem,14vw,12rem);font-weight:400;line-height:.85;letter-spacing:-.04em;margin-bottom:1rem;opacity:0;animation:fadeUp 1s .3s both}
+.hero-logo em{font-style:italic}
+.hero-sub{font-family:var(--serif);font-size:clamp(1rem,3vw,2.2rem);font-weight:400;line-height:1.2;letter-spacing:-.01em;opacity:0;animation:fadeUp 1s .5s both;margin-bottom:2rem;color:var(--b)}
+.hero-meta{display:flex;gap:3rem;justify-content:center;margin-bottom:3rem;opacity:0;animation:fadeUp 1s .7s both;flex-wrap:wrap}
+.hero-meta span{font-size:.9rem;letter-spacing:.03em;font-weight:500;display:flex;align-items:center;gap:.4rem}
+.hero-meta span strong{font-weight:600}
+.hero-cta{display:inline-flex;gap:.8rem;opacity:0;animation:fadeUp 1s .9s both}
+.hero-cta a{padding:1rem 2rem;background:var(--b);color:var(--y);border-radius:8px;font-weight:600;transition:all .3s;border:2px solid var(--b)}
+.hero-cta a:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.15)}
+.hero-cta a.secondary{background:transparent;color:var(--b);border-color:var(--b)}
+.hero-cta a.secondary:hover{background:var(--b2)}
+
+@keyframes floatSlow{0%,100%{transform:translateY(0px)}50%{transform:translateY(-30px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+section{padding:6rem 0}
+section.alt{background:var(--g1)}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-header h2{font-family:var(--serif);font-size:clamp(2rem,5vw,4rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem}
+.section-header p{font-size:1.1rem;color:var(--g4);max-width:600px;margin:0 auto}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-4{grid-template-columns:repeat(4,1fr)}
+
+/* CARDS */
+.card{padding:2rem;border-radius:12px;border:1px solid var(--g2);transition:all .3s;background:var(--w)}
+.card:hover{border-color:var(--yd);box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.card h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:.8rem}
+.card p{color:var(--g4);font-size:.95rem;line-height:1.7}
+.card.featured{background:var(--y);border-color:var(--yd)}
+.card.featured h3,.card.featured p{color:var(--b)}
+
+/* FOOTER */
+footer{background:var(--b);color:var(--w);padding:4rem 0;margin-top:6rem}
+footer .ctn{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+footer h4{font-size:.9rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem;color:var(--g2)}
+footer ul{list-style:none}
+footer a{color:var(--g2);font-size:.9rem;transition:color .3s;line-height:2}
+footer a:hover{color:var(--w)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;display:flex;justify-content:space-between;font-size:.85rem;color:var(--g2)}
+
+/* UTILITY */
+.mt{margin-top:2rem}
+.mb{margin-bottom:2rem}
+.text-center{text-align:center}
+.text-large{font-size:1.2rem}
+.text-small{font-size:.9rem}
+.text-muted{color:var(--g4)}
+.btn{display:inline-block;padding:.8rem 1.6rem;background:var(--b);color:var(--y);border-radius:6px;font-weight:600;transition:all .3s;border:none;cursor:pointer;text-align:center}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.15)}
+.btn.secondary{background:transparent;border:1px solid var(--g2);color:var(--b)}
+.btn.secondary:hover{background:var(--g1);border-color:var(--g4)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.ctn{padding:0 1.5rem}
+.nlinks{gap:1rem}
+.nlinks a{font-size:.75rem}
+.hero-meta{gap:1.5rem;flex-direction:column}
+.grid.cols-2,.grid.cols-3,.grid.cols-4{grid-template-columns:1fr}
+footer .ctn{grid-template-columns:1fr;gap:2rem}
+.footer-bottom{flex-direction:column;gap:1rem}
+.ham{display:flex}
+.nlinks{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:rgba(255,248,220,.98);padding:1rem;border-bottom:1px solid var(--g2)}
+.nlinks.a{display:flex}
+.nlinks.a a{padding:.5rem 0}
+}
+@media(max-width:480px){
+.hero-logo{font-size:3rem}
+.section-header h2{font-size:1.8rem}
+.hero-cta{flex-direction:column}
+.hero-cta a{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+<div class="ctn">
+<div class="nlogo">ilpod</div>
+<ul class="nlinks" id="nlinks">
+<li><a href="#awards">Awards</a></li>
+<li><a href="#speakers">Speakers</a></li>
+<li><a href="#partners">Partners</a></li>
+<li><a href="#newsletter">Newsletter</a></li>
+<li><a href="#contact" class="ncta">Contatti</a></li>
+</ul>
+<div class="ham" id="ham">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-floats">
+<svg class="f1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="80" fill="currentColor"/></svg>
+<svg class="f2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 L170,180 L30,180 Z" fill="currentColor"/></svg>
+<svg class="f3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="30" width="140" height="140" fill="currentColor"/></svg>
+<svg class="f4" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 A80,80 0 1,1 99.999,20 Z M100,50 A50,50 0 1,0 100.001,50" fill="currentColor"/></svg>
+<svg class="f5" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><polygon points="100,20 180,60 160,150 40,150 20,60" fill="currentColor"/></svg>
+<svg class="f6" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="currentColor"/><circle cx="150" cy="150" r="40" fill="currentColor"/><circle cx="150" cy="50" r="30" fill="currentColor"/></svg>
+<svg class="f7" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M100,20 Q150,100 100,180 Q50,100 100,20" fill="currentColor"/></svg>
+<svg class="f8" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><g><line x1="100" y1="20" x2="100" y2="180" stroke="currentColor" stroke-width="20"/><line x1="20" y1="100" x2="180" y2="100" stroke="currentColor" stroke-width="20"/></g></svg>
+</div>
+<canvas class="hero-canvas" id="heroCanvas"></canvas>
+<div class="hero-c">
+<h1 class="hero-logo"><em>il</em>Pod</h1>
+<p class="hero-sub">Italian Podcast Awards<br><strong>V edizione</strong></p>
+<div class="hero-meta">
+<span><strong>23 settembre 2026</strong></span>
+<span><strong>Piacenza</strong></span>
+</div>
+<div class="hero-cta">
+<a href="#contact">Scopri di più</a>
+<a href="#speakers" class="secondary">→ Speaker</a>
+</div>
+</div>
+</section>
+
+<!-- ABOUT/DESCRIZIONE -->
+<section id="awards" class="alt">
+<div class="ctn">
+<div class="section-header">
+<h2>Gli Italian Podcast Awards</h2>
+<p>La piattaforma culturale dedicata al podcasting italiano. Una celebrazione del talento creativo, della ricerca e dell'innovazione nel settore audio.</p>
+</div>
+<div class="grid cols-3">
+<div class="card">
+<h3>150+</h3>
+<p>Podcast in gara provenienti da tutta Italia, rappresentando una vasta gamma di generi e format innovativi.</p>
+</div>
+<div class="card">
+<h3>Qualità</h3>
+<p>Valutazione ristretta a contenuti di alta qualità, certificati da una giuria internazionale di esperti.</p>
+</div>
+<div class="card">
+<h3>Esclusivo</h3>
+<p>Un evento esclusivo a Piacenza dove verranno premiati i migliori talenti del podcasting italiano.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SPEAKERS -->
+<section id="speakers">
+<div class="ctn">
+<div class="section-header">
+<h2>Speaker & Giuria</h2>
+<p>Esperti riconosciuti del settore audio, produzione e media che guideranno le discussioni durante l'evento.</p>
+</div>
+<div class="grid">
+<div class="card featured">
+<h3>Andrea Bassi</h3>
+<p><strong>Fondatore di ilPod</strong> - Innovatore del podcasting italiano con oltre 15 anni di esperienza nel settore audio.</p>
+</div>
+<div class="card featured">
+<h3>Chiara Rizzi</h3>
+<p><strong>Content Producer</strong> - Specialista in narrative audio e documentari sonori di rilevanza internazionale.</p>
+</div>
+<div class="card featured">
+<h3>Marco Colombo</h3>
+<p><strong>Producer Musicale</strong> - Direttore artistico con esperienza in festival audio e progetti multimedia.</p>
+</div>
+<div class="card featured">
+<h3>Elena Moretti</h3>
+<p><strong>Esperta di Marketing Audio</strong> - Consulente specializzata nella distribuzione e monetizzazione di contenuti audio.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners" class="alt">
+<div class="ctn">
+<div class="section-header">
+<h2>Partner & Sponsor</h2>
+<p>Collaborazioni strategiche che rendono possibile la realizzazione di questa piattaforma esclusiva.</p>
+</div>
+<div class="grid cols-4">
+<div class="card">
+<h3>Spotify</h3>
+<p>Piattaforma di streaming audio globale partner principale dell'evento.</p>
+</div>
+<div class="card">
+<h3>RAI - Radiotelevisione Italiana</h3>
+<p>Broadcaster pubblico italiano storico nel settore audio e media.</p>
+</div>
+<div class="card">
+<h3>Soundtribe</h3>
+<p>Comunità globale di creatori audio e produttori indipendenti.</p>
+</div>
+<div class="card">
+<h3>Piacenza Hub</h3>
+<p>Centro culturale e creativo che ospita l'evento.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+<div class="ctn">
+<div class="section-header">
+<h2>Rimani Aggiornato</h2>
+<p>Iscriviti alla newsletter per ricevere le ultime notizie sugli Italian Podcast Awards.</p>
+</div>
+<div style="max-width:600px;margin:0 auto;padding:2rem;background:var(--g1);border-radius:12px">
+<form id="newsletterForm" style="display:flex;flex-direction:column;gap:1rem">
+<input type="email" placeholder="Il tuo indirizzo email" required style="padding:1rem;border:1px solid var(--g2);border-radius:6px;font-family:var(--sans);font-size:1rem">
+<button type="submit" class="btn" style="width:100%">Iscriviti</button>
+</form>
+<p id="formMessage" style="margin-top:1rem;font-size:0.9rem;text-align:center;color:var(--g4)"></p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT/CTA -->
+<section id="contact" class="alt">
+<div class="ctn">
+<div class="section-header">
+<h2>Partecipa agli Awards</h2>
+<p>Invia il tuo podcast per una valutazione gratuita. La deadline è il 15 agosto 2026.</p>
+</div>
+<div style="max-width:600px;margin:0 auto;padding:3rem;background:var(--w);border-radius:12px;border:2px solid var(--y)">
+<form id="submissionForm" style="display:flex;flex-direction:column;gap:1.5rem">
+<div>
+<label style="display:block;font-weight:600;margin-bottom:0.5rem">Nome Podcast</label>
+<input type="text" placeholder="Nome del tuo podcast" required style="width:100%;padding:0.8rem;border:1px solid var(--g2);border-radius:6px;font-family:var(--sans)">
+</div>
+<div>
+<label style="display:block;font-weight:600;margin-bottom:0.5rem">Email di Contatto</label>
+<input type="email" placeholder="email@esempio.com" required style="width:100%;padding:0.8rem;border:1px solid var(--g2);border-radius:6px;font-family:var(--sans)">
+</div>
+<div>
+<label style="display:block;font-weight:600;margin-bottom:0.5rem">Descrizione Podcast</label>
+<textarea placeholder="Descrivi il tuo podcast..." required style="width:100%;padding:0.8rem;border:1px solid var(--g2);border-radius:6px;font-family:var(--sans);min-height:120px;resize:vertical"></textarea>
+</div>
+<div>
+<label style="display:block;font-weight:600;margin-bottom:0.5rem">Link Spotify / Apple Podcasts</label>
+<input type="url" placeholder="https://..." required style="width:100%;padding:0.8rem;border:1px solid var(--g2);border-radius:6px;font-family:var(--sans)">
+</div>
+<button type="submit" class="btn" style="width:100%;padding:1rem;font-size:1rem">Invia Candidatura</button>
+<p id="submissionMessage" style="margin-top:1rem;font-size:0.9rem;text-align:center;color:var(--g4)"></p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="ctn">
+<div>
+<h4>ilPod Awards</h4>
+<p style="color:var(--g2);font-size:0.95rem;line-height:1.8">La piattaforma culturale dedicata al podcasting italiano. Un evento annuale che celebra il talento creativo del settore audio italiano.</p>
+</div>
+<div>
+<h4>Link Utili</h4>
+<ul>
+<li><a href="#awards">Awards</a></li>
+<li><a href="#speakers">Speaker</a></li>
+<li><a href="#partners">Partner</a></li>
+<li><a href="#newsletter">Newsletter</a></li>
+</ul>
+</div>
+<div>
+<h4>Contatti</h4>
+<ul>
+<li><a href="mailto:info@ilpod.it">info@ilpod.it</a></li>
+<li><a href="tel:+39051234567">+39 0 51 234 567</a></li>
+<li>Via Roma 123, Piacenza</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Italian Podcast Awards. All rights reserved.</p>
+<p>Made with care | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+</div>
+</footer>
+
+<script>
+// Smooth scroll on nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){if(this.getAttribute('href')!=='#')e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target){const offset=80;const elementPosition=target.getBoundingClientRect().top+window.scrollY-offset;window.scrollTo({top:elementPosition,behavior:'smooth'});}});});
+
+// Nav scroll effect
+const nav=document.getElementById('nav');const handleScroll=()=>{if(window.scrollY>50){nav.classList.add('s');}else{nav.classList.remove('s');}};window.addEventListener('scroll',handleScroll);
+
+// Hamburger menu
+const ham=document.getElementById('ham');const nlinks=document.getElementById('nlinks');ham.addEventListener('click',()=>{ham.classList.toggle('a');nlinks.classList.toggle('a');});
+
+// Close menu on link click
+document.querySelectorAll('.nlinks a').forEach(link=>{link.addEventListener('click',()=>{ham.classList.remove('a');nlinks.classList.remove('a');});});
+
+// Canvas animation (hero background)
+const canvas=document.getElementById('heroCanvas');const ctx=canvas.getContext('2d');const particles=[];let animationId;
+
+function resizeCanvas(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
+resizeCanvas();
+window.addEventListener('resize',resizeCanvas);
+
+class Particle{constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.size=Math.random()*2+1;this.speedX=(Math.random()-0.5)*0.5;this.speedY=(Math.random()-0.5)*0.5;this.opacity=Math.random()*0.5;}}
+
+function initParticles(){particles.length=0;for(let i=0;i<30;i++){particles.push(new Particle());}}
+
+function animateParticles(){ctx.fillStyle='rgba(10,10,10,0.02)';ctx.fillRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.x+=p.speedX;p.y+=p.speedY;if(p.x>canvas.width)p.x=0;if(p.x<0)p.x=canvas.width;if(p.y>canvas.height)p.y=0;if(p.y<0)p.y=canvas.height;ctx.fillStyle=`rgba(10,10,10,${p.opacity})`;ctx.fillRect(p.x,p.y,p.size,p.size);});animationId=requestAnimationFrame(animateParticles);}
+
+initParticles();animateParticles();
+
+// Newsletter form
+document.getElementById('newsletterForm').addEventListener('submit',function(e){
+e.preventDefault();
+const email=this.querySelector('input[type="email"]').value;
+const messageEl=document.getElementById('formMessage');
+
+// Basic validation
+if(!email){messageEl.textContent='Per favore, inserisci un\'email valida.';messageEl.style.color='#c44';return;}
+
+// Simulated submission (in production, this would send to a backend)
+messageEl.textContent='Iscrizione in corso...';messageEl.style.color='var(--g4)';
+
+setTimeout(()=>{
+messageEl.textContent='✓ Grazie! Controlla la tua email di conferma.';
+messageEl.style.color='#0a6b0a';
+this.reset();
+},1500);
+});
+
+// Submission form
+document.getElementById('submissionForm').addEventListener('submit',function(e){
+e.preventDefault();
+const formData={
+podcastName:this.querySelector('input[type="text"]').value,
+email:this.querySelector('input[type="email"]').value,
+description:this.querySelector('textarea').value,
+podcastUrl:this.querySelector('input[type="url"]').value
+};
+const messageEl=document.getElementById('submissionMessage');
+
+// Basic validation
+if(!formData.podcastName||!formData.email||!formData.description||!formData.podcastUrl){
+messageEl.textContent='Per favore, completa tutti i campi obbligatori.';
+messageEl.style.color='#c44';
+return;
+}
+
+// Simulated submission
+messageEl.textContent='Invio in corso...';
+messageEl.style.color='var(--g4)';
+
+setTimeout(()=>{
+messageEl.textContent='✓ Candidatura ricevuta con successo! Ti contatteremo entro 7 giorni.';
+messageEl.style.color='#0a6b0a';
+this.reset();
+},1500);
+});
+
+// Report button functionality
+const reportBtn=document.querySelector('button[data-report]');
+if(reportBtn){
+reportBtn.addEventListener('click',function(e){
+e.preventDefault();
+const btn=this;
+btn.textContent='Segnalazione inviata →';
+btn.style.borderColor='#c44';
+btn.style.color='#c44';
+setTimeout(()=>{btn.textContent='Invia segnalazione →';btn.style.borderColor='';btn.style.color=''},3000);
+});
+}
+
+</script>
+</body>
+</html>
