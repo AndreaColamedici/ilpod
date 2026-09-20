@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IlPod - Italian Podcast Awards</title>
-<meta name="description" content="Gli Italian Podcast Awards. La piattaforma culturale dedicata al podcasting italiano. Piacenza, 23 settembre 2026.">
+<meta name="description" content="Gli Italian Podcast Awards. La piattaforma culturale dedicata al podcasting italiano. Piacenza, mercoledì 23 settembre 2026, ore 21, piazza Cavalli. Ingresso libero.">
 <meta name="theme-color" content="#F2C744">
 <meta property="og:title" content="IlPod - Italian Podcast Awards">
-<meta property="og:description" content="La piattaforma culturale dedicata al podcasting italiano. V edizione · Piacenza · 23 settembre 2026.">
+<meta property="og:description" content="V edizione · Piacenza · 23 settembre 2026, ore 21, piazza Cavalli. Ingresso libero. Premio Storia del Podcast a Tintoria, Scanner live con Valerio Nicolosi, l'anteprima di «2033».">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ilpod.it">
 <meta property="og:image" content="https://ilpod.it/og-image.jpg">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="IlPod - Italian Podcast Awards">
-<meta name="twitter:description" content="La piattaforma culturale dedicata al podcasting italiano. V edizione · Piacenza · 23 settembre 2026.">
+<meta name="twitter:description" content="V edizione · Piacenza · 23 settembre 2026, ore 21, piazza Cavalli. Ingresso libero. Premio Storia del Podcast a Tintoria, Scanner live con Valerio Nicolosi, l'anteprima di «2033».">
 <meta name="twitter:image" content="https://ilpod.it/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F2C744'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='18' font-weight='bold' fill='%230A0A0A'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -312,6 +312,43 @@ section{padding:4.5rem 0}
 .faculty-grid{grid-template-columns:1fr}
 }
 
+/* SERATA */
+.serata{background:var(--b);color:var(--w);position:relative;overflow:hidden}
+.serata::before{content:'';position:absolute;top:-140px;right:-160px;width:520px;height:520px;background:radial-gradient(circle,rgba(242,199,68,.16) 0%,transparent 70%);pointer-events:none}
+.serata::after{content:'';position:absolute;bottom:-180px;left:-140px;width:460px;height:460px;background:radial-gradient(circle,rgba(242,199,68,.08) 0%,transparent 70%);pointer-events:none}
+.serata .ctn{position:relative;z-index:1}
+.serata .slab{color:var(--y)}
+.serata .stit{color:var(--w)}
+.serata .stit em{color:var(--y)}
+.serata-lead{font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,.72);font-weight:300;max-width:680px}
+.serata-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;margin:3rem 0}
+.sm-item{background:var(--b);padding:1.8rem 1.6rem;transition:background .5s cubic-bezier(.16,1,.3,1)}
+.sm-item:hover{background:var(--b2)}
+.sm-lab{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--y);margin-bottom:.7rem}
+.sm-val{font-family:var(--serif);font-size:1.25rem;line-height:1.25;color:var(--w)}
+.tint-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:center;background:var(--y);color:var(--b);border-radius:16px;padding:3rem;margin-bottom:2.5rem}
+.tint-lab{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;background:var(--b);color:var(--y);padding:.45rem .9rem;border-radius:5px;margin-bottom:1.5rem}
+.tint-name{font-family:var(--serif);font-size:clamp(2.6rem,6vw,4.2rem);line-height:.98;letter-spacing:-.02em;margin-bottom:.6rem}
+.tint-who{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--b2)}
+.tint-body p{font-size:.98rem;line-height:1.85;color:#2A2A2A;font-weight:300;margin-bottom:1.1rem}
+.tint-body p:last-child{margin-bottom:0}
+.tint-body strong{font-weight:500;color:var(--b)}
+.serata-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden}
+.sb{background:var(--b);padding:2.4rem 2rem;transition:background .5s cubic-bezier(.16,1,.3,1)}
+.sb:hover{background:var(--b2)}
+.sb-n{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--y);margin-bottom:1.4rem}
+.sb-t{font-family:var(--serif);font-size:1.35rem;line-height:1.15;margin-bottom:.6rem;color:var(--w)}
+.sb-d{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.6)}
+.serata-note{margin-top:2rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+@media(max-width:900px){
+.serata-meta{grid-template-columns:1fr 1fr}
+.tint-card{grid-template-columns:1fr;gap:2rem;padding:2.2rem}
+.serata-blocks{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.serata-meta{grid-template-columns:1fr}
+}
+
 /* RIBBON enhanced */
 .rib{position:relative}
 .rib::before,.rib::after{content:'';position:absolute;top:0;width:80px;height:100%;z-index:1;pointer-events:none}
@@ -323,6 +360,7 @@ section{padding:4.5rem 0}
 .hero-date-label{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--b2)}
 .hero-date-main{font-family:'Instrument Serif',serif;font-size:clamp(1.6rem,4vw,2.8rem);color:var(--b);font-weight:400;position:relative;padding-bottom:8px}
 .hero-date-main::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--b);animation:dateReveal 1.2s ease .8s forwards}
+.hero-date-extra{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--b2);margin-top:10px}
 @keyframes dateReveal{to{width:100%}}
 /* Segnala section */
 .segnala{background:var(--y3);padding:clamp(60px,10vw,120px) 0;position:relative;overflow:hidden}
@@ -379,6 +417,7 @@ noscript .rv{opacity:1!important;transform:none!important}
 <nav id="nav"><div class="ctn">
 <a href="#" class="nlogo">il POD</a>
 <ul class="nlinks" id="nl">
+<li><a href="#serata">La serata</a></li>
 <li><a href="#nuova">2026</a></li>
 <li><a href="#premi">I premi</a></li>
 <li><a href="#segnala">Segnala</a></li>
@@ -421,8 +460,8 @@ noscript .rv{opacity:1!important;transform:none!important}
 </svg>
 </div>
 <div class="hero-sub">Italian Podcast Awards</div>
-<div class="hero-date"><span class="hero-date-label">V edizione · Piacenza</span><span class="hero-date-main">23 settembre 2026</span></div>
-<a href="#nuova" class="hero-btn">La nuova edizione →</a>
+<div class="hero-date"><span class="hero-date-label">V edizione · Piacenza</span><span class="hero-date-main">23 settembre 2026</span><span class="hero-date-extra">Ore 21 · Piazza Cavalli · Ingresso libero</span></div>
+<a href="#serata" class="hero-btn">La serata del 23 settembre →</a>
 </div>
 <div class="hero-scroll">Scroll</div>
 </section>
@@ -437,6 +476,7 @@ noscript .rv{opacity:1!important;transform:none!important}
 <span class="rib-i"><span class="rib-d"></span>Piacenza 2026</span>
 <span class="rib-i"><span class="rib-d"></span>Festival del Pensare Contemporaneo</span>
 <span class="rib-i"><span class="rib-d"></span>23 settembre</span>
+<span class="rib-i"><span class="rib-d"></span>Piazza Cavalli</span>
 <span class="rib-i"><span class="rib-d"></span>Tlon</span>
 <span class="rib-i"><span class="rib-d"></span>Comitato Editoriale</span>
 <span class="rib-i"><span class="rib-d"></span>Podcast dell'Anno</span>
@@ -446,6 +486,7 @@ noscript .rv{opacity:1!important;transform:none!important}
 <span class="rib-i"><span class="rib-d"></span>Piacenza 2026</span>
 <span class="rib-i"><span class="rib-d"></span>Festival del Pensare Contemporaneo</span>
 <span class="rib-i"><span class="rib-d"></span>23 settembre</span>
+<span class="rib-i"><span class="rib-d"></span>Piazza Cavalli</span>
 <span class="rib-i"><span class="rib-d"></span>Tlon</span>
 </div></div>
 
@@ -467,6 +508,42 @@ noscript .rv{opacity:1!important;transform:none!important}
 </div>
 </div>
 
+
+<!-- SERATA -->
+<section class="serata" id="serata">
+<div class="ctn">
+<div class="slab rv">La serata · V edizione</div>
+<h2 class="stit stit-glow rv">Mercoledì 23 settembre,<br>in <em>piazza Cavalli</em></h2>
+<p class="serata-lead rv">Gli Italian Podcast Awards salgono sul palco di piazza Cavalli alla vigilia del Festival del Pensare Contemporaneo: una serata aperta alla città, con i quattro riconoscimenti consegnati dal vivo, il debutto della redazione della Piacenza Podcast Academy e due appuntamenti che, per una sera, si ascoltano in piazza anziché in cuffia.</p>
+
+<div class="serata-meta rv">
+<div class="sm-item"><div class="sm-lab">Quando</div><div class="sm-val">Mercoledì 23 settembre, ore 21</div></div>
+<div class="sm-item"><div class="sm-lab">Dove</div><div class="sm-val">Piazza Cavalli, Piacenza</div></div>
+<div class="sm-item"><div class="sm-lab">Ingresso</div><div class="sm-val">Libero, senza prenotazione</div></div>
+<div class="sm-item"><div class="sm-lab">Conduzione</div><div class="sm-val">Rossella Pivanti e Maura Gancitano</div></div>
+</div>
+
+<div class="tint-card rv">
+<div class="tint-side">
+<div class="tint-lab">Premio Storia del Podcast 2026</div>
+<div class="tint-name">Tintoria</div>
+<div class="tint-who">Daniele Tinti e Stefano Rapone</div>
+</div>
+<div class="tint-body">
+<p>Il Premio Storia del Podcast è l'unico riconoscimento che non guarda all'annata ma al tempo lungo: va a un progetto che negli anni ha costruito un percorso autoriale riconoscibile, duraturo e capace di entrare nell'immaginario del podcast italiano. Nel 2026 quel progetto è <strong>Tintoria</strong>, il podcast di Daniele Tinti e Stefano Rapone.</p>
+<p>Tinti e Rapone ritirano il premio sul palco e poi restano: la serata si chiude con <strong>un'intervista dal vivo</strong> a loro due, condotta da Maura Gancitano e Valerio Nicolosi.</p>
+</div>
+</div>
+
+<div class="serata-blocks rv">
+<div class="sb"><div class="sb-n">01</div><div class="sb-t">Scanner, puntata live</div><div class="sb-d">Una puntata speciale di Scanner, il programma di informazione di Valerio Nicolosi per Fanpage.it, costruita dal vivo davanti al pubblico della piazza.</div></div>
+<div class="sb"><div class="sb-n">02</div><div class="sb-t">«2033», l'anteprima</div><div class="sb-d">Il primo episodio del podcast collettivo scritto, registrato e montato dalla redazione della Piacenza Podcast Academy: il debutto pubblico dei suoi partecipanti.</div></div>
+<div class="sb"><div class="sb-n">03</div><div class="sb-t">Tre premi, tre nomi</div><div class="sb-d">Podcast dell'Anno, Podcast Indie dell'Anno e Premio della Podcast Academy vengono proclamati e consegnati dal palco, la sera stessa.</div></div>
+</div>
+
+<p class="serata-note rv">Un progetto Tlon · In dialogo con il Festival del Pensare Contemporaneo, 24–27 settembre</p>
+</div>
+</section>
 
 <!-- NEWSLETTER -->
 <section class="newsletter-cta">
