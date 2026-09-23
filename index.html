@@ -372,6 +372,18 @@ section{padding:4.5rem 0}
 .sb-t{font-family:var(--serif);font-size:1.35rem;line-height:1.15;margin-bottom:.6rem;color:var(--w)}
 .sb-d{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.6)}
 /* FOTO */
+.galleria{background:var(--b);padding:3.5rem 0 4rem}
+.gal-lab{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--y);margin-bottom:1.4rem}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gal-grid figure{margin:0;overflow:hidden;border-radius:10px;aspect-ratio:3/2;background:var(--b2)}
+.gal-grid img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.16,1,.3,1),filter .6s;filter:saturate(.92)}
+.gal-grid figure:hover img{transform:scale(1.06);filter:saturate(1.05)}
+.gal-note{margin-top:1.3rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+.academy-foto{margin:2.6rem 0 0;border-radius:12px;overflow:hidden;position:relative}
+.academy-foto img{display:block;width:100%;height:clamp(200px,32vw,380px);object-fit:cover;object-position:center 45%}
+.academy-foto figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.6rem 1.3rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+@media(max-width:900px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.gal-grid{grid-template-columns:1fr}}
 .foto-band{margin:0;position:relative;overflow:hidden;background:var(--b)}
 .foto-band img{display:block;width:100%;height:clamp(240px,46vw,560px);object-fit:cover;object-position:center 42%;animation:fotoZoom 26s ease-in-out infinite alternate}
 .foto-band figcaption{position:absolute;left:0;right:0;bottom:0;padding:3.2rem 1.6rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.82));font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72);text-align:center}
@@ -679,6 +691,22 @@ noscript .rv{opacity:1!important;transform:none!important}
 <figcaption>Una passata edizione al Teatro Municipale · Quest'anno IlPod esce in piazza</figcaption>
 </figure>
 
+<!-- GALLERIA -->
+<section class="galleria">
+<div class="ctn">
+<div class="gal-lab rv">Le edizioni passate</div>
+<div class="gal-grid rv">
+<figure><img src="galleria-1.jpg" alt="Il pubblico in sala alla cerimonia di IlPod" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="galleria-2.jpg" alt="Un momento della cerimonia sul palco, davanti al logo di IlPod" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="galleria-3.jpg" alt="La consegna di un premio sul palco" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="galleria-4.jpg" alt="La sala del Teatro Municipale durante la premiazione" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="galleria-5.jpg" alt="Un abbraccio davanti alla parete del Podcast dell'anno" width="1000" height="667" loading="lazy"></figure>
+<figure><img src="galleria-6.jpg" alt="Applausi tra il pubblico della cerimonia" width="1000" height="667" loading="lazy"></figure>
+</div>
+<p class="gal-note rv">Immagini delle edizioni precedenti · Archivio IlPod e Fondazione di Piacenza e Vigevano</p>
+</div>
+</section>
+
 <!-- NEWSLETTER -->
 <section class="newsletter-cta">
 <div class="ctn">
@@ -870,6 +898,11 @@ noscript .rv{opacity:1!important;transform:none!important}
 <div class="hl-desc">Giornalismo culturale in tempo reale durante il Festival. Interviste, reportage, racconto del contemporaneo attraverso l'audio.</div>
 </div>
 </div>
+
+<figure class="academy-foto rv">
+<img src="academy-foto.jpg" alt="I partecipanti della Piacenza Podcast Academy durante un laboratorio" width="1200" height="800" loading="lazy">
+<figcaption>Un laboratorio del percorso, a Piacenza</figcaption>
+</figure>
 
 <div class="academy-cta rv">
 <div class="academy-cta-text">
