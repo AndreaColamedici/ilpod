@@ -371,6 +371,16 @@ section{padding:4.5rem 0}
 .sb-n{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--y);margin-bottom:1.4rem}
 .sb-t{font-family:var(--serif);font-size:1.35rem;line-height:1.15;margin-bottom:.6rem;color:var(--w)}
 .sb-d{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.6)}
+/* FOTO */
+.foto-band{margin:0;position:relative;overflow:hidden;background:var(--b)}
+.foto-band img{display:block;width:100%;height:clamp(240px,46vw,560px);object-fit:cover;object-position:center 42%;animation:fotoZoom 26s ease-in-out infinite alternate}
+.foto-band figcaption{position:absolute;left:0;right:0;bottom:0;padding:3.2rem 1.6rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.82));font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72);text-align:center}
+@keyframes fotoZoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+.faces{display:inline-flex;vertical-align:middle;margin-right:.9rem}
+.faces img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--b);margin-right:-11px;background:var(--g7)}
+.faces img:last-child{margin-right:0}
+.sb-face{float:right;width:48px;height:48px;border-radius:50%;object-fit:cover;margin:0 0 .6rem .9rem;border:1px solid rgba(242,199,68,.45)}
+@media(prefers-reduced-motion:reduce){.foto-band img{animation:none}}
 .serata-note{margin-top:2rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 /* DIRETTA */
 .hero .hero-date{margin-bottom:2rem}
@@ -630,7 +640,7 @@ noscript .rv{opacity:1!important;transform:none!important}
 <div class="sm-item"><div class="sm-lab">Quando</div><div class="sm-val">Mercoledì 23 settembre, ore 21</div></div>
 <div class="sm-item"><div class="sm-lab">Dove</div><div class="sm-val">Piazza Cavalli, Piacenza</div></div>
 <div class="sm-item"><div class="sm-lab">Ingresso</div><div class="sm-val">Libero, senza prenotazione</div></div>
-<div class="sm-item"><div class="sm-lab">Conduzione</div><div class="sm-val">Rossella Pivanti e Maura Gancitano</div></div>
+<div class="sm-item"><div class="sm-lab">Conduzione</div><div class="sm-val"><span class="faces"><img src="ritratto-pivanti.jpg" alt="Rossella Pivanti" width="240" height="240" loading="lazy"><img src="ritratto-gancitano.jpg" alt="Maura Gancitano" width="240" height="240" loading="lazy"></span>Rossella Pivanti e Maura Gancitano</div></div>
 </div>
 
 
@@ -654,7 +664,7 @@ noscript .rv{opacity:1!important;transform:none!important}
 </div>
 
 <div class="serata-blocks rv">
-<div class="sb"><div class="sb-n">01</div><div class="sb-t">Scanner, puntata live</div><div class="sb-d">Una puntata speciale di Scanner, il programma di informazione di Valerio Nicolosi per Fanpage.it, costruita dal vivo davanti al pubblico della piazza.</div></div>
+<div class="sb"><img class="sb-face" src="ritratto-nicolosi.jpg" alt="Valerio Nicolosi" width="240" height="240" loading="lazy"><div class="sb-n">01</div><div class="sb-t">Scanner, puntata live</div><div class="sb-d">Una puntata speciale di Scanner, il programma di informazione di Valerio Nicolosi per Fanpage.it, costruita dal vivo davanti al pubblico della piazza.</div></div>
 <div class="sb"><div class="sb-n">02</div><div class="sb-t">«2033», l'anteprima</div><div class="sb-d">Il primo episodio del podcast collettivo scritto, registrato e montato dalla redazione della Piacenza Podcast Academy: il debutto pubblico dei suoi partecipanti.</div></div>
 <div class="sb"><div class="sb-n">03</div><div class="sb-t">Tre premi, tre nomi</div><div class="sb-d">Podcast dell'Anno, Podcast Indie dell'Anno e Premio della Podcast Academy vengono proclamati e consegnati dal palco, la sera stessa.</div></div>
 </div>
@@ -662,6 +672,12 @@ noscript .rv{opacity:1!important;transform:none!important}
 <p class="serata-note rv">Un progetto Tlon · In dialogo con il Festival del Pensare Contemporaneo, 24–27 settembre</p>
 </div>
 </section>
+
+<!-- FOTO -->
+<figure class="foto-band">
+<img src="foto-teatro.jpg" alt="Il pubblico di una passata edizione di IlPod al Teatro Municipale di Piacenza" width="1400" height="933" loading="lazy">
+<figcaption>Una passata edizione al Teatro Municipale · Quest'anno IlPod esce in piazza</figcaption>
+</figure>
 
 <!-- NEWSLETTER -->
 <section class="newsletter-cta">
