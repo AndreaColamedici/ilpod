@@ -345,17 +345,23 @@ section{padding:4.5rem 0}
 .sb-d{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.6)}
 .serata-note{margin-top:2rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 /* DIRETTA */
-.live-box{max-width:600px;margin:0 auto 2.4rem;text-align:left;border:1px solid rgba(0,0,0,.18);border-radius:16px;background:var(--b);overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.18);opacity:0;animation:fadeUp 1s .8s both}
-.live-head{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;padding:1rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.12)}
-.live-dot{width:9px;height:9px;border-radius:50%;background:#E03A2F;animation:livepulse 2.2s infinite}
-@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(224,58,47,.55)}70%{box-shadow:0 0 0 12px rgba(224,58,47,0)}100%{box-shadow:0 0 0 0 rgba(224,58,47,0)}}
+.hero .hero-date{margin-bottom:2rem}
+.live-box{max-width:540px;margin:0 auto 2rem;text-align:left;border:1px solid rgba(0,0,0,.18);border-radius:14px;background:var(--b);overflow:hidden;box-shadow:0 16px 44px rgba(0,0,0,.18);opacity:0;animation:fadeUp 1s .8s both}
+.live-head{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;padding:.85rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#E03A2F;animation:livepulse 2.2s infinite}
+@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(224,58,47,.55)}70%{box-shadow:0 0 0 11px rgba(224,58,47,0)}100%{box-shadow:0 0 0 0 rgba(224,58,47,0)}}
 @media(prefers-reduced-motion:reduce){.live-dot{animation:none}}
-.live-lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--y)}
-.live-when{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-left:auto}
-.live-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000}
-.live-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.live-foot{padding:1rem 1.3rem;font-size:.8rem;line-height:1.7;color:rgba(255,255,255,.6)}
-.live-foot a{color:var(--y);text-decoration:none;border-bottom:1px solid rgba(242,199,68,.45)}
+.live-lab{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--y)}
+.live-when{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-left:auto}
+.live-stage{position:relative;width:100%;background:#000}
+.live-stage.on{aspect-ratio:16/9}
+.live-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.live-wait{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:1.15rem 1.2rem}
+.live-wait p{flex:1;min-width:190px;margin:0;font-size:.82rem;line-height:1.6;color:rgba(255,255,255,.62)}
+.live-play{display:inline-flex;align-items:center;gap:.5rem;background:var(--y);color:var(--b);border:0;border-radius:6px;padding:.6rem 1.1rem;font-family:var(--sans);font-size:.78rem;font-weight:500;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.live-play:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.live-foot{padding:.85rem 1.2rem;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.live-foot a{color:var(--y);text-decoration:none;border-bottom:1px solid rgba(242,199,68,.4)}
 .live-foot a:hover{border-bottom-color:var(--y)}
 @media(max-width:900px){
 .serata-meta{grid-template-columns:1fr 1fr}
@@ -364,7 +370,8 @@ section{padding:4.5rem 0}
 }
 @media(max-width:600px){
 .serata-meta{grid-template-columns:1fr}
-.live-head,.live-foot{padding-left:1.05rem;padding-right:1.05rem}
+.live-head,.live-foot,.live-wait{padding-left:1rem;padding-right:1rem}
+.live-box{max-width:100%}
 .live-when{margin-left:0;width:100%}
 }
 
@@ -522,12 +529,15 @@ noscript .rv{opacity:1!important;transform:none!important}
 </div>
 <div class="hero-sub">Italian Podcast Awards</div>
 <div class="hero-date"><span class="hero-date-label">V edizione · Piacenza</span><span class="hero-date-main">23 settembre 2026</span><span class="hero-date-extra">Ore 21 · Piazza Cavalli · Ingresso libero</span></div>
-<div class="live-box">
-<div class="live-head"><span class="live-dot"></span><span class="live-lab">Diretta streaming</span><span class="live-when">Stasera dalle 21</span></div>
-<div class="live-frame">
-<iframe src="https://www.youtube.com/embed/live_stream?channel=UCP8R6WbHCErZhvlEC-hmT_w" title="IlPod 2026, la diretta della serata dal canale YouTube di Tlon" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+<div class="live-box" id="livebox" data-start="2026-09-23T20:50:00+02:00">
+<div class="live-head"><span class="live-dot"></span><span class="live-lab">Diretta streaming</span><span class="live-when" id="livewhen">Stasera dalle 21</span></div>
+<div class="live-stage" id="livestage">
+<div class="live-wait" id="livewait">
+<p>Il player si apre qui appena la diretta parte, intorno alle 21.</p>
+<button class="live-play" type="button" id="liveplay">&#9654; Apri ora</button>
 </div>
-<div class="live-foot">La serata va in onda dal vivo sul canale YouTube di Tlon. Se il riquadro è ancora nero, la diretta non è partita: ricarica la pagina dopo le 21, oppure <a href="https://www.youtube.com/@TlonItalia/live" target="_blank" rel="noopener">guardala direttamente su YouTube</a>.</div>
+</div>
+<div class="live-foot">Canale YouTube di Tlon &middot; <a href="https://www.youtube.com/@TlonItalia/live" target="_blank" rel="noopener">apri su YouTube</a></div>
 </div>
 <a href="#serata" class="hero-btn">La serata del 23 settembre →</a>
 </div>
@@ -1330,6 +1340,27 @@ setTimeout(()=>{btn.textContent='Invia segnalazione →';btn.style.borderColor='
 });
 }
 
+</script>
+<script>
+(function(){
+var box=document.getElementById('livebox');if(!box)return;
+var stage=document.getElementById('livestage'),wait=document.getElementById('livewait'),btn=document.getElementById('liveplay'),when=document.getElementById('livewhen'),mounted=false;
+function mount(){
+ if(mounted)return;mounted=true;
+ if(wait&&wait.parentNode)wait.parentNode.removeChild(wait);
+ stage.classList.add('on');
+ var f=document.createElement('iframe');
+ f.src='https://www.youtube.com/embed/live_stream?channel=UCP8R6WbHCErZhvlEC-hmT_w';
+ f.title='IlPod 2026, la diretta della serata dal canale YouTube di Tlon';
+ f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+ f.referrerPolicy='strict-origin-when-cross-origin';f.allowFullscreen=true;
+ stage.appendChild(f);
+ if(when)when.textContent='In onda';
+}
+if(btn)btn.addEventListener('click',mount);
+var t=new Date(box.dataset.start).getTime()-Date.now();
+if(t<=0){mount()}else if(t<86400000){setTimeout(mount,t)}
+})();
 </script>
 </body>
 </html>
