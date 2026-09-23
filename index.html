@@ -344,6 +344,19 @@ section{padding:4.5rem 0}
 .sb-t{font-family:var(--serif);font-size:1.35rem;line-height:1.15;margin-bottom:.6rem;color:var(--w)}
 .sb-d{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.6)}
 .serata-note{margin-top:2rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+/* DIRETTA */
+.live-box{margin:0 0 2.5rem;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:var(--b2);overflow:hidden}
+.live-head{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;padding:1.15rem 1.6rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.live-dot{width:9px;height:9px;border-radius:50%;background:#E03A2F;animation:livepulse 2.2s infinite}
+@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(224,58,47,.55)}70%{box-shadow:0 0 0 12px rgba(224,58,47,0)}100%{box-shadow:0 0 0 0 rgba(224,58,47,0)}}
+@media(prefers-reduced-motion:reduce){.live-dot{animation:none}}
+.live-lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--y)}
+.live-when{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-left:auto}
+.live-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+.live-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.live-foot{padding:1.1rem 1.6rem;font-size:.85rem;line-height:1.75;color:rgba(255,255,255,.6)}
+.live-foot a{color:var(--y);text-decoration:none;border-bottom:1px solid rgba(242,199,68,.45)}
+.live-foot a:hover{border-bottom-color:var(--y)}
 @media(max-width:900px){
 .serata-meta{grid-template-columns:1fr 1fr}
 .tint-card{grid-template-columns:1fr;gap:2rem;padding:2.2rem}
@@ -351,6 +364,8 @@ section{padding:4.5rem 0}
 }
 @media(max-width:600px){
 .serata-meta{grid-template-columns:1fr}
+.live-head,.live-foot{padding-left:1.1rem;padding-right:1.1rem}
+.live-when{margin-left:0;width:100%}
 }
 
 /* RIBBON enhanced */
@@ -567,6 +582,15 @@ noscript .rv{opacity:1!important;transform:none!important}
 <div class="sm-item"><div class="sm-lab">Dove</div><div class="sm-val">Piazza Cavalli, Piacenza</div></div>
 <div class="sm-item"><div class="sm-lab">Ingresso</div><div class="sm-val">Libero, senza prenotazione</div></div>
 <div class="sm-item"><div class="sm-lab">Conduzione</div><div class="sm-val">Rossella Pivanti e Maura Gancitano</div></div>
+</div>
+
+<!-- DIRETTA YOUTUBE -->
+<div class="live-box rv">
+<div class="live-head"><span class="live-dot"></span><span class="live-lab">Diretta streaming</span><span class="live-when">Mercoledì 23 settembre, dalle 21</span></div>
+<div class="live-frame">
+<iframe src="https://www.youtube.com/embed/live_stream?channel=UCP8R6WbHCErZhvlEC-hmT_w" title="IlPod 2026, la diretta della serata dal canale YouTube di Tlon" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+</div>
+<div class="live-foot">La serata va in onda dal vivo sul canale YouTube di Tlon. Se il riquadro è ancora nero, la diretta non è partita: ricarica la pagina dopo le 21, oppure <a href="https://www.youtube.com/@TlonItalia/live" target="_blank" rel="noopener">guardala direttamente su YouTube</a>.</div>
 </div>
 
 <div class="tint-card rv">
