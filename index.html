@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IlPod - Italian Podcast Awards</title>
-<meta name="description" content="Gli Italian Podcast Awards. La piattaforma culturale dedicata al podcasting italiano. Piacenza, mercoledì 23 settembre 2026, ore 21, piazza Cavalli. Ingresso libero.">
+<meta name="description" content="Gli Italian Podcast Awards. La piattaforma culturale dedicata al podcasting italiano. I vincitori della V edizione, Piacenza, 23 settembre 2026, piazza Cavalli.">
 <meta name="theme-color" content="#F2C744">
 <meta property="og:title" content="IlPod - Italian Podcast Awards">
-<meta property="og:description" content="V edizione · Piacenza · 23 settembre 2026, ore 21, piazza Cavalli. Ingresso libero. Premio Storia del Podcast a Tintoria, Scanner live con Valerio Nicolosi, l'anteprima di «2033».">
+<meta property="og:description" content="V edizione · Piacenza, 23 settembre 2026, piazza Cavalli. Podcast dell'Anno: Il Banchiere di Dio. Indie dell'Anno: Illumina Show. Premio dell'Academy: Elisa True Crime. Premio Storia del Podcast: Tintoria.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ilpod.it">
 <meta property="og:image" content="https://ilpod.it/og-image.jpg">
@@ -17,7 +17,7 @@
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="IlPod - Italian Podcast Awards">
-<meta name="twitter:description" content="V edizione · Piacenza · 23 settembre 2026, ore 21, piazza Cavalli. Ingresso libero. Premio Storia del Podcast a Tintoria, Scanner live con Valerio Nicolosi, l'anteprima di «2033».">
+<meta name="twitter:description" content="V edizione · Piacenza, 23 settembre 2026, piazza Cavalli. Podcast dell'Anno: Il Banchiere di Dio. Indie dell'Anno: Illumina Show. Premio dell'Academy: Elisa True Crime. Premio Storia del Podcast: Tintoria.">
 <meta name="twitter:image" content="https://ilpod.it/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F2C744'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='18' font-weight='bold' fill='%230A0A0A'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,6 +106,23 @@ section{padding:6rem 0}
 .nuova-text p{font-size:1rem;line-height:1.85;color:var(--g7);font-weight:300;margin-bottom:1.2rem}
 .nuova-text strong{font-weight:500;color:var(--b)}
 .nuova-quote{font-family:var(--serif);font-size:1.4rem;font-style:italic;line-height:1.4;color:var(--yd);border-left:2px solid var(--y);padding-left:1.5rem;margin:2rem 0}
+
+/* VINCITORI */
+.vinc{background:var(--y3);padding:6.5rem 0}
+.vinc-lead{font-size:1.05rem;line-height:1.85;color:var(--g7);font-weight:300;max-width:660px;margin-bottom:3rem}
+.vinc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem}
+.vc{display:grid;grid-template-columns:132px 1fr;gap:1.5rem;background:var(--w);border:1px solid var(--g2);border-radius:14px;padding:1.6rem;align-items:start;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s,border-color .5s}
+.vc:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.09);border-color:var(--yd)}
+.vc-cover{width:132px;height:132px;border-radius:10px;overflow:hidden;background:var(--g1);box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.vc-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.vc-lab{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--yd);margin-bottom:.7rem}
+.vc-t{font-family:var(--serif);font-size:1.65rem;line-height:1.08;margin-bottom:.35rem}
+.vc-who{font-size:.82rem;color:var(--b);margin-bottom:.75rem}
+.vc-d{font-size:.84rem;line-height:1.65;color:var(--g7)}
+.vc-link{display:inline-block;margin-top:.9rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--b);border-bottom:1px solid var(--y);padding-bottom:2px;transition:border-color .3s}
+.vc-link:hover{border-bottom-color:var(--b)}
+.vinc-note{margin-top:2.4rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--g4);line-height:2}
+.vinc-note a{color:var(--b);border-bottom:1px solid var(--y)}
 
 /* PREMI */
 .premi{background:var(--y3)}
@@ -197,12 +214,15 @@ footer{background:var(--b);border-top:1px solid rgba(255,255,255,.05);padding:1.
 .ham{display:flex}
 .nuova-grid,.cont-grid{grid-template-columns:1fr;gap:2.5rem}
 .premi-grid{grid-template-columns:1fr 1fr}
+.vinc-grid{grid-template-columns:1fr}
 .criteri-grid{grid-template-columns:1fr}
 .num-grid{grid-template-columns:1fr 1fr}
 section{padding:4.5rem 0}
 }
 @media(max-width:600px){
 .premi-grid{grid-template-columns:1fr}
+.vc{grid-template-columns:1fr;gap:1.1rem}
+.vc-cover{width:110px;height:110px}
 .super-row{grid-template-columns:1fr}
 .cat-grid{grid-template-columns:1fr}
 .ctn{padding:0 1.5rem}
@@ -401,6 +421,7 @@ section{padding:4.5rem 0}
 .live-box{max-width:540px;margin:0 auto 2rem;text-align:left;border:1px solid rgba(0,0,0,.18);border-radius:14px;background:var(--b);overflow:hidden;box-shadow:0 16px 44px rgba(0,0,0,.18);opacity:0;animation:fadeUp 1s .8s both}
 .live-head{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;padding:.85rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
 .live-dot{width:8px;height:8px;border-radius:50%;background:#E03A2F;animation:livepulse 2.2s infinite}
+.live-dot.rec{background:var(--y);animation:none}
 @keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(224,58,47,.55)}70%{box-shadow:0 0 0 11px rgba(224,58,47,0)}100%{box-shadow:0 0 0 0 rgba(224,58,47,0)}}
 @media(prefers-reduced-motion:reduce){.live-dot{animation:none}}
 .live-lab{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--y)}
@@ -408,13 +429,18 @@ section{padding:4.5rem 0}
 .live-stage{position:relative;width:100%;background:#000}
 .live-stage.on{aspect-ratio:16/9}
 .live-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.live-wait{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:1.15rem 1.2rem}
-.live-wait p{flex:1;min-width:190px;margin:0;font-size:.82rem;line-height:1.6;color:rgba(255,255,255,.62)}
-.live-play{display:inline-flex;align-items:center;gap:.5rem;background:var(--y);color:var(--b);border:0;border-radius:6px;padding:.6rem 1.1rem;font-family:var(--sans);font-size:.78rem;font-weight:500;cursor:pointer;transition:transform .3s,box-shadow .3s}
-.live-play:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.28)}
 .live-foot{padding:.85rem 1.2rem;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 .live-foot a{color:var(--y);text-decoration:none;border-bottom:1px solid rgba(242,199,68,.4)}
 .live-foot a:hover{border-bottom-color:var(--y)}
+.live-poster{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;background:#000}
+.live-wave{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);width:100%;height:58%;fill:var(--y);opacity:.14;transition:opacity .5s}
+.live-poster:hover .live-wave{opacity:.22}
+.live-poster-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.85rem;text-align:center;padding:1rem}
+.live-pb{width:62px;height:62px;border-radius:50%;background:var(--y);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.live-poster:hover .live-pb{transform:scale(1.08)}
+.live-pb svg{width:20px;height:20px;margin-left:3px;fill:var(--b)}
+.live-poster-t{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#fff}
+.live-poster-s{font-size:.76rem;color:rgba(255,255,255,.6)}
 @media(max-width:900px){
 .serata-meta{grid-template-columns:1fr 1fr}
 .tint-card{grid-template-columns:1fr;gap:1.6rem;padding:1.6rem}
@@ -424,7 +450,7 @@ section{padding:4.5rem 0}
 }
 @media(max-width:600px){
 .serata-meta{grid-template-columns:1fr}
-.live-head,.live-foot,.live-wait{padding-left:1rem;padding-right:1rem}
+.live-head,.live-foot{padding-left:1rem;padding-right:1rem}
 .live-box{max-width:100%}
 .live-when{margin-left:0;width:100%}
 }
@@ -538,6 +564,7 @@ noscript .rv{opacity:1!important;transform:none!important}
 <nav id="nav"><div class="ctn">
 <a href="#" class="nlogo">il POD</a>
 <ul class="nlinks" id="nl">
+<li><a href="#vincitori">Vincitori</a></li>
 <li><a href="#serata">La serata</a></li>
 <li><a href="#nuova">2026</a></li>
 <li><a href="#premi">I premi</a></li>
@@ -583,17 +610,21 @@ noscript .rv{opacity:1!important;transform:none!important}
 </div>
 <div class="hero-sub">Italian Podcast Awards</div>
 <div class="hero-date"><span class="hero-date-label">V edizione · Piacenza</span><span class="hero-date-main">23 settembre 2026</span><span class="hero-date-extra">Ore 21 · Piazza Cavalli · Ingresso libero</span></div>
-<div class="live-box" id="livebox" data-start="2026-09-23T20:50:00+02:00">
-<div class="live-head"><span class="live-dot"></span><span class="live-lab">Diretta streaming</span><span class="live-when" id="livewhen">Stasera dalle 21</span></div>
+<div class="live-box" id="livebox">
+<div class="live-head"><span class="live-dot rec"></span><span class="live-lab">La serata, integrale</span><span class="live-when">23 settembre &middot; piazza Cavalli</span></div>
 <div class="live-stage" id="livestage">
-<div class="live-wait" id="livewait">
-<p>Il player si apre qui appena la diretta parte, intorno alle 21.</p>
-<button class="live-play" type="button" id="liveplay">&#9654; Apri ora</button>
+<a class="live-poster" href="https://www.youtube.com/watch?v=2aJCCZEkq_I" target="_blank" rel="noopener" aria-label="Guarda su YouTube la registrazione integrale della serata del 23 settembre">
+<svg class="live-wave" viewBox="0 0 1000 180" preserveAspectRatio="none" aria-hidden="true"><rect x="10" y="55" width="10" height="69" rx="5"/><rect x="32" y="15" width="10" height="149" rx="5"/><rect x="54" y="66" width="10" height="47" rx="5"/><rect x="76" y="51" width="10" height="78" rx="5"/><rect x="98" y="34" width="10" height="111" rx="5"/><rect x="120" y="73" width="10" height="34" rx="5"/><rect x="142" y="71" width="10" height="37" rx="5"/><rect x="164" y="23" width="10" height="133" rx="5"/><rect x="186" y="42" width="10" height="96" rx="5"/><rect x="208" y="70" width="10" height="40" rx="5"/><rect x="230" y="53" width="10" height="74" rx="5"/><rect x="252" y="39" width="10" height="102" rx="5"/><rect x="274" y="72" width="10" height="35" rx="5"/><rect x="296" y="18" width="10" height="144" rx="5"/><rect x="318" y="44" width="10" height="92" rx="5"/><rect x="340" y="62" width="10" height="55" rx="5"/><rect x="362" y="74" width="10" height="32" rx="5"/><rect x="384" y="70" width="10" height="39" rx="5"/><rect x="406" y="48" width="10" height="83" rx="5"/><rect x="428" y="49" width="10" height="81" rx="5"/><rect x="450" y="72" width="10" height="36" rx="5"/><rect x="472" y="61" width="10" height="58" rx="5"/><rect x="494" y="70" width="10" height="39" rx="5"/><rect x="516" y="41" width="10" height="98" rx="5"/><rect x="538" y="49" width="10" height="82" rx="5"/><rect x="560" y="72" width="10" height="35" rx="5"/><rect x="582" y="23" width="10" height="133" rx="5"/><rect x="604" y="40" width="10" height="100" rx="5"/><rect x="626" y="68" width="10" height="43" rx="5"/><rect x="648" y="15" width="10" height="149" rx="5"/><rect x="670" y="62" width="10" height="56" rx="5"/><rect x="692" y="36" width="10" height="108" rx="5"/><rect x="714" y="36" width="10" height="108" rx="5"/><rect x="736" y="39" width="10" height="102" rx="5"/><rect x="758" y="15" width="10" height="149" rx="5"/><rect x="780" y="72" width="10" height="35" rx="5"/><rect x="802" y="39" width="10" height="101" rx="5"/><rect x="824" y="39" width="10" height="102" rx="5"/><rect x="846" y="51" width="10" height="78" rx="5"/><rect x="868" y="73" width="10" height="34" rx="5"/><rect x="890" y="62" width="10" height="56" rx="5"/><rect x="912" y="73" width="10" height="33" rx="5"/><rect x="934" y="40" width="10" height="99" rx="5"/><rect x="956" y="21" width="10" height="137" rx="5"/><rect x="978" y="67" width="10" height="45" rx="5"/></svg>
+<span class="live-poster-c">
+<span class="live-pb"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,4 20,12 6,20"/></svg></span>
+<span class="live-poster-t">Guarda la serata integrale</span>
+<span class="live-poster-s">1 ora e 58 minuti &middot; canale YouTube di Tlon</span>
+</span>
+</a>
 </div>
+<div class="live-foot">Canale YouTube di Tlon &middot; <a href="https://www.youtube.com/watch?v=2aJCCZEkq_I" target="_blank" rel="noopener">guarda su YouTube</a></div>
 </div>
-<div class="live-foot">Canale YouTube di Tlon &middot; <a href="https://www.youtube.com/@TlonItalia/live" target="_blank" rel="noopener">apri su YouTube</a></div>
-</div>
-<a href="#serata" class="hero-btn">La serata del 23 settembre →</a>
+<a href="#vincitori" class="hero-btn">I vincitori della V edizione →</a>
 </div>
 <div class="hero-scroll">Scroll</div>
 </section>
@@ -641,6 +672,65 @@ noscript .rv{opacity:1!important;transform:none!important}
 </div>
 
 
+<!-- VINCITORI -->
+<section class="vinc" id="vincitori">
+<div class="ctn">
+<div class="slab rv">I vincitori &middot; V edizione</div>
+<h2 class="stit stit-glow rv">I podcast premiati<br>in <em>piazza Cavalli</em></h2>
+<p class="vinc-lead rv">La sera del 23 settembre 2026 gli Italian Podcast Awards hanno consegnato dal vivo, davanti al pubblico della piazza, i quattro riconoscimenti della quinta edizione: il Podcast dell'Anno, il Podcast Indie dell'Anno, il premio scelto dagli allievi della Piacenza Podcast Academy e il Premio Storia del Podcast.</p>
+
+<div class="vinc-grid rv">
+
+<article class="vc">
+<div class="vc-cover"><img src="cover-banchiere.jpg" alt="La copertina del podcast Il Banchiere di Dio" width="600" height="600" loading="lazy"></div>
+<div>
+<div class="vc-lab">Podcast dell'Anno 2026</div>
+<div class="vc-t">Il Banchiere di Dio</div>
+<div class="vc-who">Di Nicol&ograve; Majnoni &middot; produzione originale Vois</div>
+<p class="vc-d">L'inchiesta sulla morte di Roberto Calvi, trovato senza vita sotto il Blackfriars Bridge di Londra nel giugno 1982, e sul sistema che teneva insieme Banco Ambrosiano, IOR e loggia P2. Nasce dal podcast statunitense &laquo;God's Banker&raquo; di Crooked Media e Campside Media ed esce in italiano e in inglese in parallelo.</p>
+<a class="vc-link" href="https://vois.fm/podcast/il-banchiere-di-dio/" target="_blank" rel="noopener">Ascolta &rarr;</a>
+</div>
+</article>
+
+<article class="vc">
+<div class="vc-cover"><img src="cover-illumina.jpg" alt="La copertina del podcast Illumina Show" width="600" height="600" loading="lazy"></div>
+<div>
+<div class="vc-lab">Podcast Indie dell'Anno 2026</div>
+<div class="vc-t">Illumina Show</div>
+<div class="vc-who">Di Luca Dodaro &middot; Aosta</div>
+<p class="vc-d">Partito nel 2022 come <em>Illumina Aosta</em>, un podcast di interviste nato in una regione piccola e diventato il racconto settimanale di chi la abita, dalle piste ciclabili al primo Pride della Valle d'Aosta. Dodaro &egrave; salito sul palco a ritirare il premio: il riconoscimento va a chi fa tutto da solo o in un gruppo minuscolo, senza produzione alle spalle.</p>
+<a class="vc-link" href="https://podcasts.apple.com/it/podcast/illumina-show/id1809772659" target="_blank" rel="noopener">Ascolta &rarr;</a>
+</div>
+</article>
+
+<article class="vc">
+<div class="vc-cover"><img src="cover-elisa.jpg" alt="La copertina del podcast Elisa True Crime" width="600" height="600" loading="lazy"></div>
+<div>
+<div class="vc-lab">Premio Piacenza Podcast Academy</div>
+<div class="vc-t">Elisa True Crime</div>
+<div class="vc-who">Di Elisa De Marco</div>
+<p class="vc-d">Scelto a maggioranza schiacciante dagli allievi dell'Academy, al termine di un percorso di ascolto critico, perch&eacute; &laquo;riesce a essere avvincente, intrigante ed emozionante in ogni puntata&raquo; e &laquo;ricco di informazioni, accurato e mai banale&raquo;. De Marco non ha potuto essere in piazza e ha mandato un videomessaggio di ringraziamento ai ragazzi e alle ragazze che l'hanno premiata.</p>
+<a class="vc-link" href="https://podcasts.apple.com/it/podcast/elisa-true-crime/id1628126740" target="_blank" rel="noopener">Ascolta &rarr;</a>
+</div>
+</article>
+
+<article class="vc">
+<div class="vc-cover"><img src="cover-tintoria.jpg" alt="La copertina del podcast Tintoria" width="600" height="600" loading="lazy"></div>
+<div>
+<div class="vc-lab">Premio Storia del Podcast 2026</div>
+<div class="vc-t">Tintoria</div>
+<div class="vc-who">Di Daniele Tinti e Stefano Rapone &middot; The Comedy Club</div>
+<p class="vc-d">L'unico premio che non guarda all'annata ma al tempo lungo, e che nel 2026 va al podcast che ha portato la comicit&agrave; italiana dentro il formato della conversazione: oltre duecento puntate e altrettanti ospiti. Tinti e Rapone hanno ritirato il premio e poi sono rimasti sul palco per l'intervista che ha chiuso la serata.</p>
+<a class="vc-link" href="https://podcasts.apple.com/it/podcast/tintoria/id1434243021" target="_blank" rel="noopener">Ascolta &rarr;</a>
+</div>
+</article>
+
+</div>
+
+<p class="vinc-note rv">Premi consegnati da Cristian Fiazza, assessore del Comune di Piacenza, e da Luigi Salice, consigliere di amministrazione della Fondazione di Piacenza e Vigevano &middot; <a href="https://www.youtube.com/watch?v=2aJCCZEkq_I" target="_blank" rel="noopener">la registrazione integrale della serata</a></p>
+</div>
+</section>
+
 <!-- SERATA -->
 <section class="serata" id="serata">
 <div class="ctn">
@@ -678,7 +768,7 @@ noscript .rv{opacity:1!important;transform:none!important}
 <div class="serata-blocks rv">
 <div class="sb"><img class="sb-face" src="ritratto-nicolosi.jpg" alt="Valerio Nicolosi" width="240" height="240" loading="lazy"><div class="sb-n">01</div><div class="sb-t">Scanner, puntata live</div><div class="sb-d">Una puntata speciale di Scanner, il programma di informazione di Valerio Nicolosi per Fanpage.it, costruita dal vivo davanti al pubblico della piazza.</div></div>
 <div class="sb"><div class="sb-n">02</div><div class="sb-t">«2033», l'anteprima</div><div class="sb-d">Il primo episodio del podcast collettivo scritto, registrato e montato dalla redazione della Piacenza Podcast Academy: il debutto pubblico dei suoi partecipanti.</div></div>
-<div class="sb"><div class="sb-n">03</div><div class="sb-t">Tre premi, tre nomi</div><div class="sb-d">Podcast dell'Anno, Podcast Indie dell'Anno e Premio della Podcast Academy vengono proclamati e consegnati dal palco, la sera stessa.</div></div>
+<div class="sb"><div class="sb-n">03</div><div class="sb-t">Tre premi, tre nomi</div><div class="sb-d">Podcast dell'Anno a Il Banchiere di Dio, Podcast Indie dell'Anno a Illumina Show e Premio della Podcast Academy a Elisa True Crime, proclamati e consegnati dal palco la sera stessa.</div></div>
 </div>
 
 <p class="serata-note rv">Un progetto Tlon · In dialogo con il Festival del Pensare Contemporaneo, 24–27 settembre</p>
@@ -1428,27 +1518,6 @@ setTimeout(()=>{btn.textContent='Invia segnalazione →';btn.style.borderColor='
 });
 }
 
-</script>
-<script>
-(function(){
-var box=document.getElementById('livebox');if(!box)return;
-var stage=document.getElementById('livestage'),wait=document.getElementById('livewait'),btn=document.getElementById('liveplay'),when=document.getElementById('livewhen'),mounted=false;
-function mount(){
- if(mounted)return;mounted=true;
- if(wait&&wait.parentNode)wait.parentNode.removeChild(wait);
- stage.classList.add('on');
- var f=document.createElement('iframe');
- f.src='https://www.youtube.com/embed/live_stream?channel=UCP8R6WbHCErZhvlEC-hmT_w';
- f.title='IlPod 2026, la diretta della serata dal canale YouTube di Tlon';
- f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
- f.referrerPolicy='strict-origin-when-cross-origin';f.allowFullscreen=true;
- stage.appendChild(f);
- if(when)when.textContent='In onda';
-}
-if(btn)btn.addEventListener('click',mount);
-var t=new Date(box.dataset.start).getTime()-Date.now();
-if(t<=0){mount()}else if(t<86400000){setTimeout(mount,t)}
-})();
 </script>
 </body>
 </html>
